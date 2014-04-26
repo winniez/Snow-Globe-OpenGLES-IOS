@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		866B30FB190BA25B001036AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FA190BA25B001036AF /* Foundation.framework */; };
+		866B30FD190BA25B001036AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FC190BA25B001036AF /* CoreGraphics.framework */; };
+		866B30FF190BA25B001036AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FE190BA25B001036AF /* UIKit.framework */; };
+		866B3105190BA25B001036AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 866B3103190BA25B001036AF /* InfoPlist.strings */; };
+		866B3107190BA25B001036AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 866B3106190BA25B001036AF /* main.m */; };
+		866B310B190BA25B001036AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 866B310A190BA25B001036AF /* AppDelegate.m */; };
+		866B310D190BA25B001036AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866B310C190BA25B001036AF /* Images.xcassets */; };
+		866B3114190BA25B001036AF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B3113190BA25B001036AF /* XCTest.framework */; };
+		866B3115190BA25B001036AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FA190BA25B001036AF /* Foundation.framework */; };
+		866B3116190BA25B001036AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FE190BA25B001036AF /* UIKit.framework */; };
+		866B311E190BA25B001036AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 866B311C190BA25B001036AF /* InfoPlist.strings */; };
+		866B3120190BA25B001036AF /* SnowGlobeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 866B311F190BA25B001036AF /* SnowGlobeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		866B3117190BA25B001036AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 866B30EF190BA25B001036AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 866B30F6190BA25B001036AF;
+			remoteInfo = SnowGlobe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		866B30F7190BA25B001036AF /* SnowGlobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowGlobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		866B30FA190BA25B001036AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		866B30FC190BA25B001036AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		866B30FE190BA25B001036AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		866B3102190BA25B001036AF /* SnowGlobe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnowGlobe-Info.plist"; sourceTree = "<group>"; };
+		866B3104190BA25B001036AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		866B3106190BA25B001036AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		866B3108190BA25B001036AF /* SnowGlobe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SnowGlobe-Prefix.pch"; sourceTree = "<group>"; };
+		866B3109190BA25B001036AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		866B310A190BA25B001036AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		866B310C190BA25B001036AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		866B3112190BA25B001036AF /* SnowGlobeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowGlobeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		866B3113190BA25B001036AF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		866B311B190BA25B001036AF /* SnowGlobeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnowGlobeTests-Info.plist"; sourceTree = "<group>"; };
+		866B311D190BA25B001036AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		866B311F190BA25B001036AF /* SnowGlobeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowGlobeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		866B30F4190BA25B001036AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866B30FD190BA25B001036AF /* CoreGraphics.framework in Frameworks */,
+				866B30FF190BA25B001036AF /* UIKit.framework in Frameworks */,
+				866B30FB190BA25B001036AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		866B310F190BA25B001036AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866B3114190BA25B001036AF /* XCTest.framework in Frameworks */,
+				866B3116190BA25B001036AF /* UIKit.framework in Frameworks */,
+				866B3115190BA25B001036AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		866B30EE190BA25B001036AF = {
+			isa = PBXGroup;
+			children = (
+				866B3100190BA25B001036AF /* SnowGlobe */,
+				866B3119190BA25B001036AF /* SnowGlobeTests */,
+				866B30F9190BA25B001036AF /* Frameworks */,
+				866B30F8190BA25B001036AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		866B30F8190BA25B001036AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				866B30F7190BA25B001036AF /* SnowGlobe.app */,
+				866B3112190BA25B001036AF /* SnowGlobeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		866B30F9190BA25B001036AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				866B30FA190BA25B001036AF /* Foundation.framework */,
+				866B30FC190BA25B001036AF /* CoreGraphics.framework */,
+				866B30FE190BA25B001036AF /* UIKit.framework */,
+				866B3113190BA25B001036AF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		866B3100190BA25B001036AF /* SnowGlobe */ = {
+			isa = PBXGroup;
+			children = (
+				866B3109190BA25B001036AF /* AppDelegate.h */,
+				866B310A190BA25B001036AF /* AppDelegate.m */,
+				866B310C190BA25B001036AF /* Images.xcassets */,
+				866B3101190BA25B001036AF /* Supporting Files */,
+			);
+			path = SnowGlobe;
+			sourceTree = "<group>";
+		};
+		866B3101190BA25B001036AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				866B3102190BA25B001036AF /* SnowGlobe-Info.plist */,
+				866B3103190BA25B001036AF /* InfoPlist.strings */,
+				866B3106190BA25B001036AF /* main.m */,
+				866B3108190BA25B001036AF /* SnowGlobe-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		866B3119190BA25B001036AF /* SnowGlobeTests */ = {
+			isa = PBXGroup;
+			children = (
+				866B311F190BA25B001036AF /* SnowGlobeTests.m */,
+				866B311A190BA25B001036AF /* Supporting Files */,
+			);
+			path = SnowGlobeTests;
+			sourceTree = "<group>";
+		};
+		866B311A190BA25B001036AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				866B311B190BA25B001036AF /* SnowGlobeTests-Info.plist */,
+				866B311C190BA25B001036AF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		866B30F6190BA25B001036AF /* SnowGlobe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 866B3123190BA25B001036AF /* Build configuration list for PBXNativeTarget "SnowGlobe" */;
+			buildPhases = (
+				866B30F3190BA25B001036AF /* Sources */,
+				866B30F4190BA25B001036AF /* Frameworks */,
+				866B30F5190BA25B001036AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnowGlobe;
+			productName = SnowGlobe;
+			productReference = 866B30F7190BA25B001036AF /* SnowGlobe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		866B3111190BA25B001036AF /* SnowGlobeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 866B3126190BA25B001036AF /* Build configuration list for PBXNativeTarget "SnowGlobeTests" */;
+			buildPhases = (
+				866B310E190BA25B001036AF /* Sources */,
+				866B310F190BA25B001036AF /* Frameworks */,
+				866B3110190BA25B001036AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				866B3118190BA25B001036AF /* PBXTargetDependency */,
+			);
+			name = SnowGlobeTests;
+			productName = SnowGlobeTests;
+			productReference = 866B3112190BA25B001036AF /* SnowGlobeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		866B30EF190BA25B001036AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Winnie Zeng";
+				TargetAttributes = {
+					866B3111190BA25B001036AF = {
+						TestTargetID = 866B30F6190BA25B001036AF;
+					};
+				};
+			};
+			buildConfigurationList = 866B30F2190BA25B001036AF /* Build configuration list for PBXProject "SnowGlobe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 866B30EE190BA25B001036AF;
+			productRefGroup = 866B30F8190BA25B001036AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				866B30F6190BA25B001036AF /* SnowGlobe */,
+				866B3111190BA25B001036AF /* SnowGlobeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		866B30F5190BA25B001036AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866B3105190BA25B001036AF /* InfoPlist.strings in Resources */,
+				866B310D190BA25B001036AF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		866B3110190BA25B001036AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866B311E190BA25B001036AF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		866B30F3190BA25B001036AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866B310B190BA25B001036AF /* AppDelegate.m in Sources */,
+				866B3107190BA25B001036AF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		866B310E190BA25B001036AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866B3120190BA25B001036AF /* SnowGlobeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		866B3118190BA25B001036AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 866B30F6190BA25B001036AF /* SnowGlobe */;
+			targetProxy = 866B3117190BA25B001036AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		866B3103190BA25B001036AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				866B3104190BA25B001036AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		866B311C190BA25B001036AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				866B311D190BA25B001036AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		866B3121190BA25B001036AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		866B3122190BA25B001036AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		866B3124190BA25B001036AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SnowGlobe/SnowGlobe-Prefix.pch";
+				INFOPLIST_FILE = "SnowGlobe/SnowGlobe-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		866B3125190BA25B001036AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SnowGlobe/SnowGlobe-Prefix.pch";
+				INFOPLIST_FILE = "SnowGlobe/SnowGlobe-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		866B3127190BA25B001036AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SnowGlobe.app/SnowGlobe";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SnowGlobe/SnowGlobe-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SnowGlobeTests/SnowGlobeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		866B3128190BA25B001036AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SnowGlobe.app/SnowGlobe";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SnowGlobe/SnowGlobe-Prefix.pch";
+				INFOPLIST_FILE = "SnowGlobeTests/SnowGlobeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		866B30F2190BA25B001036AF /* Build configuration list for PBXProject "SnowGlobe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				866B3121190BA25B001036AF /* Debug */,
+				866B3122190BA25B001036AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		866B3123190BA25B001036AF /* Build configuration list for PBXNativeTarget "SnowGlobe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				866B3124190BA25B001036AF /* Debug */,
+				866B3125190BA25B001036AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		866B3126190BA25B001036AF /* Build configuration list for PBXNativeTarget "SnowGlobeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				866B3127190BA25B001036AF /* Debug */,
+				866B3128190BA25B001036AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 866B30EF190BA25B001036AF /* Project object */;
+}
