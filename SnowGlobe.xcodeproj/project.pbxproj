@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8657DE7D190E636300BB650F /* CylinderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8657DE7C190E636300BB650F /* CylinderObject.m */; };
+		8657DE82190EE40100BB650F /* Grass_Texture_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8657DE80190EE40100BB650F /* Grass_Texture_02.jpg */; };
+		8657DE83190EE40100BB650F /* grasslight-big.png in Resources */ = {isa = PBXBuildFile; fileRef = 8657DE81190EE40100BB650F /* grasslight-big.png */; };
 		866B30FB190BA25B001036AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FA190BA25B001036AF /* Foundation.framework */; };
 		866B30FD190BA25B001036AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FC190BA25B001036AF /* CoreGraphics.framework */; };
 		866B30FF190BA25B001036AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FE190BA25B001036AF /* UIKit.framework */; };
@@ -156,6 +158,8 @@
 		8657DE7C190E636300BB650F /* CylinderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CylinderObject.m; sourceTree = "<group>"; };
 		8657DE7E190EBAF600BB650F /* CylinderShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CylinderShader.vsh; sourceTree = "<group>"; };
 		8657DE7F190EBB2800BB650F /* CylinderShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CylinderShader.fsh; sourceTree = "<group>"; };
+		8657DE80190EE40100BB650F /* Grass_Texture_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Grass_Texture_02.jpg; sourceTree = "<group>"; };
+		8657DE81190EE40100BB650F /* grasslight-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grasslight-big.png"; sourceTree = "<group>"; };
 		866B30F7190BA25B001036AF /* SnowGlobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowGlobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		866B30FA190BA25B001036AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		866B30FC190BA25B001036AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -634,6 +638,8 @@
 		867DCF4F190DAECD0066E31B /* Texture */ = {
 			isa = PBXGroup;
 			children = (
+				8657DE80190EE40100BB650F /* Grass_Texture_02.jpg */,
+				8657DE81190EE40100BB650F /* grasslight-big.png */,
 				867DCF50190DAECD0066E31B /* pump_star_03.png */,
 				867DCF51190DAECD0066E31B /* snowflake-transparent-1.png */,
 				867DCF52190DAECD0066E31B /* snowflake-transparent-2.png */,
@@ -721,6 +727,7 @@
 			files = (
 				867DCEDE190CA9480066E31B /* Manor.obj in Resources */,
 				867DCF40190CAFE40066E31B /* arenastonegrey08.jpg in Resources */,
+				8657DE83190EE40100BB650F /* grasslight-big.png in Resources */,
 				867DCF19190CAA470066E31B /* flatstone01.dds in Resources */,
 				867DCF55190DAECD0066E31B /* pump_star_03.png in Resources */,
 				867DCF2E190CAA470066E31B /* woodstain01_n.dds in Resources */,
@@ -775,6 +782,7 @@
 				867DCECF190CA9480066E31B /* standard_crates.tga in Resources */,
 				867DCED5190CA9480066E31B /* windows_doors1.jpg in Resources */,
 				867DCEC4190CA9480066E31B /* prioryroof01_n.dds in Resources */,
+				8657DE82190EE40100BB650F /* Grass_Texture_02.jpg in Resources */,
 				867DCEC3190CA9480066E31B /* prioryroof01.dds in Resources */,
 				867DCEC9190CA9480066E31B /* roof_slate_bm_NRM.jpg in Resources */,
 				867DCF59190DAECD0066E31B /* snowflake-transparent-5.png in Resources */,

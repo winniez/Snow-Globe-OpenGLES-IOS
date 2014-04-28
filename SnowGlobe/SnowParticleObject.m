@@ -72,7 +72,7 @@
     
     // Offset bounds
     float oVelocity = 0.50f;    // Speed
-    float oDecay = 0.75f;       // Time
+    float oDecay = 2.0f;       // Time
     float oSize = 2.00f;        // Pixels
     float oColor = 0.00f;       // 0.5 = 50% shade offset
     float oTime = 5.00f;
@@ -95,7 +95,7 @@
     
     // Load Properties
     newEmitter.eVelocity = 3.00f;                               // Explosion velocity
-    newEmitter.eDecay = 4.00f;                                  // Explosion decay
+    newEmitter.eDecay = 8.00f;                                  // Explosion decay
     newEmitter.eSize = 8.00f;                                 // Fragment size
     newEmitter.eColor = GLKVector3Make(1.00f, 1.00f, 1.00f);    // Fragment color
     
@@ -187,15 +187,21 @@
 
 - (GLKVector3) generateStartPosition
 {
+    // generate uniform distribution within a sphere volumn
+    // reference: http://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform
+    // and http://math.stackexchange.com/questions/87230/picking-random-points-in-the-volume-of-sphere-with-uniform-probability
+    
     double radius = 1.0f;
-    float r = [self randomFloatBetween:0.0f and:radius];
-    double theta = (double)[self randomFloatBetween:0 and: 2 * M_PI];
-    double phi = (double)[self randomFloatBetween:0 and: 0.8 * M_PI];
-    
-    float x = r * (float)cos(theta) * (float)sin(phi);
-    float y = r * (float)cos(phi);
-    float z = r * (float)sin(theta) * (float)sin(phi);
-    
+    float U = [self randomFloatBetween:0.0f and:radius];
+    U = powf(U, (1.0/3.0));
+    float x0 = [self randomFloatBetween:-radius and:radius];
+    float y0 = [self randomFloatBetween:0.0f and:radius];
+    float z0 = [self randomFloatBetween:-radius and:radius];
+    float sqrt_xyz = sqrtf(x0*x0 + y0*y0 + z0*z0);
+    float x = x0 * U/sqrt_xyz;
+    float y = y0 * U/sqrt_xyz;
+    float z = z0 * U/sqrt_xyz;
+
     return GLKVector3Make(x, y, z);
 }
 

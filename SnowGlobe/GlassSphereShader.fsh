@@ -51,8 +51,16 @@ static const char* GlassSphereShaderF = STRINGIFY
  void main(void)
 {
     //lowp vec3 color = modelColor();
-    lowp vec3 color = vec3(1.0, 1.0, 1.0);
-    gl_FragColor = vec4(color, 0.3);
+    //lowp vec3 color = vec3(1.0, 1.0, 1.0);
+    highp vec3 N = normalize(vNormal);
+    highp vec3 L = vec3(1.0, 1.0, 0.5);
+    highp vec3 E = vec3(0.0, 0.0, 1.0);
+    highp vec3 H = normalize(L + E);
+    
+    highp float df = max(0.0, dot(N, L));
+    highp float sf = max(0.0, dot(N, H));
+    lowp vec3 color = materialDefault(df, sf);
+    gl_FragColor = vec4(color, 0.15);
 }
  
  );

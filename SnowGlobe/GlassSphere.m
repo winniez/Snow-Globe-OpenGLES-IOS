@@ -55,9 +55,9 @@
 {
     int i,j;
     double radius = 1.0f;
-    int stacks = 32;
-    int slices = 64;
-    int size = stacks * (slices+1) * 2;
+    int stacks = 64;
+    int slices = 128;
+    int size = stacks * (slices) * 2;
     _num = size;
     _vertices = malloc(3 * size * sizeof(float));
     _normals = malloc(3 * size * sizeof(float));
@@ -70,7 +70,7 @@
         double cosLat1 = cos(latitude1);
         double sinLat2 = sin(latitude2);
         double cosLat2 = cos(latitude2);
-        for (i = 0; i <= slices; i++) {
+        for (i = 0; i < slices; i++) {
             double longitude = (2*M_PI/slices) * i;
             double sinLong = sin(longitude);
             double cosLong = cos(longitude);
@@ -130,9 +130,13 @@
     glVertexAttribPointer(_attributes.aVertex, 3, GL_FLOAT, GL_FALSE, 0, _vertices);
     glVertexAttribPointer(_attributes.aNormal, 3, GL_FLOAT, GL_FALSE, 0, _normals);
     glVertexAttribPointer(_attributes.aTexture, 2,  GL_FLOAT, GL_FALSE, 0, _texcoords);
+    glEnable (GL_BLEND);
     
+    glBlendFunc (GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+    glDepthMask(0);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, _num);
-    
+    glDisable(GL_BLEND);
+     glDepthMask(1);
     // Disable Attributes
     glDisableVertexAttribArray(_attributes.aVertex);
     glDisableVertexAttribArray(_attributes.aNormal);

@@ -56,8 +56,8 @@
     [self.groundObj setScale:1.6f];
     // Set up Emitter
     self.snowEmitter = [[SnowParticleObject alloc] initWithTexture:@"snowflake-transparent-5.png"];
-    [self.snowEmitter setCoord:GLKVector3Make(0.0f, 0.5f, 0.0f)];
-    [self.snowEmitter setScale:1.2f];
+    [self.snowEmitter setCoord:GLKVector3Make(0.0f, 0.0f, 0.0f)];
+    [self.snowEmitter setScale:0.9f];
     
     // Set up sphere
     self.sphereObj = [[GlassSphere alloc] loadObject];
@@ -104,7 +104,7 @@
     
     [self.snowEmitter renderWithProjection:_projectionMatrix MVMatrix : _modelViewMatrix];
     [self.sphereObj displayWith:_projectionMatrix MVMatrix:_modelViewMatrix NMatrix:_normalMatrix];
-    [self.cylinderObj displayWith:_projectionMatrix MVMatrix:_modelViewMatrix NMatrix:_normalMatrix];
+    //[self.cylinderObj displayWith:_projectionMatrix MVMatrix:_modelViewMatrix NMatrix:_normalMatrix];
 }
 
 # pragma mark - GLKViewController Delegate

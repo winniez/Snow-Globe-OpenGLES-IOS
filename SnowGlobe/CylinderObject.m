@@ -120,9 +120,10 @@
     glVertexAttribPointer(_attributes.aVertex, 3, GL_FLOAT, GL_FALSE, 0, _vertices);
     glVertexAttribPointer(_attributes.aNormal, 3, GL_FLOAT, GL_FALSE, 0, _normals);
     glVertexAttribPointer(_attributes.aTexture, 2,  GL_FLOAT, GL_FALSE, 0, _texcoords);
-    
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_ONE, GL_ZERO);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, _num);
-    
+    glDisable(GL_BLEND);
     // Disable Attributes
     glDisableVertexAttribArray(_attributes.aVertex);
     glDisableVertexAttribArray(_attributes.aNormal);
