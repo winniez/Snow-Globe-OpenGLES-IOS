@@ -31,6 +31,28 @@ struct UniformHandles
     GLint       uMode;
 };
 
+typedef struct GlassSphereAttributeHandles
+{
+    GLint       aVertex;
+    GLint       aNormal;
+    GLint       aTexture;
+} GlassSphereAttributeHandles;
+
+typedef struct GlassSphereUniformHandles
+{
+    GLuint      uProjectionMatrix;
+    GLuint      uModelViewMatrix;
+    GLuint      uNormalMatrix;
+    
+    GLint       uAmbient;
+    GLint       uDiffuse;
+    GLint       uSpecular;
+    GLint       uExponent;
+    
+    GLint       uTexture;
+    GLint       uMode;
+}GlassSphereUniformHandles;
+
 typedef struct ParticleAttributeHandles
 {
     // Attribute Handles

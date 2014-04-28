@@ -1,26 +1,25 @@
 //
-//  GlassSphere.h
+//  CylinderObject.h
 //  SnowGlobe
 //
-//  Created by Winnie Zeng on 4/27/14.
+//  Created by Winnie Zeng on 4/28/14.
 //  Copyright (c) 2014 Winnie Zeng. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <GLKit/GLKit.h>
-
 #import "Utility.h"
 
 // Shaders
 #import "ShaderProcessor.h"
 
-@interface GlassSphere : NSObject
+
+@interface CylinderObject : NSObject
 {
     // Render
     GLuint  _program;
     
-    struct GlassSphereAttributeHandles _attributes;
-    struct GlassSphereUniformHandles   _uniforms;
+    struct AttributeHandles _attributes;
+    struct UniformHandles   _uniforms;
     
     GLuint  _texture;
     NSArray *textureFiles;
@@ -33,6 +32,9 @@
     float*      _normals;
     float*      _texcoords;
     int         _num;
+    float       _r1;
+    float       _r2;
+    float       _h;
 }
 
 @property (strong, nonatomic) ShaderProcessor* shaderProcessor;
@@ -45,7 +47,7 @@
             MVMatrix :(GLKMatrix4) modelViewMatrix
              NMatrix :(GLKMatrix3) normalMatrix;
 
-- (void) sphereData;
+- (void) cylinderData;
 - (void) setCoord : (GLKVector3) newcoord;
 - (void) setScale : (GLfloat) scale;
 @end

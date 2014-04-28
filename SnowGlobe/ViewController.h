@@ -12,6 +12,8 @@
 #import "HouseObject.h"
 #import "GroundObject.h"
 #import "SnowParticleObject.h"
+#import "GlassSphere.h"
+#import "CylinderObject.h"
 // Transformations
 #import "Transformations.h"
 
@@ -29,6 +31,8 @@
 @property (strong, nonatomic) HouseObject* houseObj;
 @property (strong, nonatomic) GroundObject* groundObj;
 @property (strong) SnowParticleObject*  snowEmitter;
+@property (strong) GlassSphere* sphereObj;
+@property (strong) CylinderObject *cylinderObj;
 
 // View
 @property (strong, nonatomic) EAGLContext* context;

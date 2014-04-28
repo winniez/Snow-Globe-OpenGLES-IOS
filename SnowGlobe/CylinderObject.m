@@ -1,38 +1,82 @@
 //
-//  GlassSphere.m
+//  CylinderObject.m
 //  SnowGlobe
 //
-//  Created by Winnie Zeng on 4/27/14.
+//  Created by Winnie Zeng on 4/28/14.
 //  Copyright (c) 2014 Winnie Zeng. All rights reserved.
 //
 
-#import "GlassSphere.h"
+#import "CylinderObject.h"
 #import "math.h"
 #define STRINGIFY(A) #A
-#import "GlassSphereShader.vsh"
-#import "GlassSphereShader.fsh"
+#import "CylinderShader.vsh"
+#import "CylinderShader.fsh"
 
-@implementation GlassSphere
+@implementation CylinderObject
+
 - (id) loadObject
 {
-    
-    // Load texture
-    
     _scale = 1.0f;
     _coord = GLKVector3Make(0.0f, 0.0f, 0.0f);
+    _r1 = 0.5;
+    _r2 = 0.8;
+    _h = 0.4;
+    // 133;94;66 wood color
     
-    [self sphereData];
+    [self cylinderData];
     [self loadShader];
     
     return self;
 }
+
+
+- (void) cylinderData
+{
+    const int segments = 500;
+    int size = segments * 2;
+    _num = size;
+    _vertices = malloc(3 * size * sizeof(float));
+    _normals = malloc(3 * size * sizeof(float));
+    _texcoords = malloc(2 * size * sizeof(float));
+    
+    float phi = 0.0f, dphi = 2 * M_PI / (segments - 1);
+    float Nx = _r1 - _r2, Ny = _h;
+    float N = sqrtf(Nx * Nx + Ny * Ny);
+    Nx /= N;
+    Ny /= N;
+    int k = 0;
+    float cosphi, sinphi, cosphi2, sinphi2;
+    for (int i = 0; i < segments; i++)
+    {
+        cosphi = cosf(phi);
+        sinphi = sinf(phi);
+        cosphi2 = cosf(phi + dphi/2);
+        sinphi2 = sinf(phi + dphi/2);
+        _vertices[k] = -_h/2;
+        _vertices[k+1] = cosphi * _r1;
+        _vertices[k+2] = sinphi * _r1;
+        _normals[k] = Nx;
+        _normals[k+1] = Ny * cosphi;
+        _normals[k+2] = Ny * sinphi;
+        k += 3;
+        _vertices[k] = _h/2;
+        _vertices[k+1] = cosphi2 * _r2;
+        _vertices[k+2] = sinphi2 * _r2;
+        _normals[k] = Nx;
+        _normals[k+1] = Ny * cosphi2;
+        _normals[k+2] = Ny * sinphi2;
+        k += 3;
+        phi += dphi;
+    }
+}
+
 
 - (void) loadShader
 {
     // Load Shader
     self.shaderProcessor = [[ShaderProcessor alloc] init];
     // Create the GLSL program
-    _program = [self.shaderProcessor BuildProgram:GlassSphereShaderV with:GlassSphereShaderF];
+    _program = [self.shaderProcessor BuildProgram:CylinderShaderV with:CylinderShaderF];
     glUseProgram(_program);
     // Extract the attribute handles
     _attributes.aVertex = glGetAttribLocation(_program, "aVertex");
@@ -49,60 +93,6 @@
     _uniforms.uExponent = glGetUniformLocation(_program, "uExponent");
     _uniforms.uTexture = glGetUniformLocation(_program, "uTexture");
     glUseProgram(0);
-}
-
-- (void) sphereData
-{
-    int i,j;
-    double radius = 1.0f;
-    int stacks = 32;
-    int slices = 64;
-    int size = stacks * (slices+1) * 2;
-    _num = size;
-    _vertices = malloc(3 * size * sizeof(float));
-    _normals = malloc(3 * size * sizeof(float));
-    _texcoords = malloc(2 * size * sizeof(float));
-    int k = 0, k2 = 0;
-    for (j = 0; j < stacks; j++) {
-        double latitude1 = (M_PI/stacks) * j - M_PI_2;
-        double latitude2 = (M_PI/stacks) * (j+1) - M_PI_2;
-        double sinLat1 = sin(latitude1);
-        double cosLat1 = cos(latitude1);
-        double sinLat2 = sin(latitude2);
-        double cosLat2 = cos(latitude2);
-        for (i = 0; i <= slices; i++) {
-            double longitude = (2*M_PI/slices) * i;
-            double sinLong = sin(longitude);
-            double cosLong = cos(longitude);
-            double x1 = cosLong * cosLat1;
-            double y1 = sinLong * cosLat1;
-            double z1 = sinLat1;
-            double x2 = cosLong * cosLat2;
-            double y2 = sinLong * cosLat2;
-            double z2 = sinLat2;
-            _normals[k] =  (float)x2;
-            _normals[k+1] =  (float)y2;
-            _normals[k+2] =  (float)z2;
-            _vertices[k] =  (float)(radius*x2);
-            _vertices[k+1] =  (float)(radius*y2);
-            _vertices[k+2] =  (float)(radius*z2);
-            k2 += 2;
-            k += 3;
-            _normals[k] =  (float)x1;
-            _normals[k+1] =  (float)y1;
-            _normals[k+2] =  (float)z1;
-            _vertices[k] =  (float)(radius*x1);
-            _vertices[k+1] =  (float)(radius*y1);
-            _vertices[k+2] =  (float)(radius*z1);
-            k2 += 2;
-            k += 3;
-        }
-    }
-}
-
-
-- (void) loadTexture:(NSString *)fileName Index : (int)index
-{
 }
 
 - (void) displayWith : (GLKMatrix4) projectionMatrix
@@ -153,4 +143,5 @@
 {
     _scale = scale;
 }
+
 @end

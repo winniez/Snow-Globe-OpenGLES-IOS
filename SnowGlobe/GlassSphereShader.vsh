@@ -1,9 +1,8 @@
 // VERTEX SHADER
 
-static const char* GlassSphereShaderV = STRINGIFY
-(
+static const char* GlassSphereShaderV = STRINGIFY(
  
- // OBJ Data
+ // Data
  attribute vec4 aVertex;
  attribute vec3 aNormal;
  attribute vec2 aTexture;

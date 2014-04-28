@@ -1,6 +1,6 @@
 // FRAGMENT SHADER
 
-static const char* AccumulationShaderF = STRINGIFY
+static const char* CylinderShaderF = STRINGIFY
 (
  
  // Input from Vertex Shader
@@ -50,7 +50,8 @@ static const char* AccumulationShaderF = STRINGIFY
  
  void main(void)
 {
-    lowp vec3 color = modelColor();
+    //lowp vec3 color = modelColor();
+    lowp vec3 color = vec3(1.0, 1.0, 1.0);
     gl_FragColor = vec4(color, 1.0);
 }
  

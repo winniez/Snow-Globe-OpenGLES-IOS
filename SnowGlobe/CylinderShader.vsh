@@ -1,6 +1,6 @@
 // VERTEX SHADER
 
-static const char* AccumulationShaderV = STRINGIFY
+static const char* CylinderShaderV = STRINGIFY
 (
  
  // OBJ Data

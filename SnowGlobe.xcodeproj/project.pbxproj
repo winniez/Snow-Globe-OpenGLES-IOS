@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8657DE7D190E636300BB650F /* CylinderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8657DE7C190E636300BB650F /* CylinderObject.m */; };
 		866B30FB190BA25B001036AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FA190BA25B001036AF /* Foundation.framework */; };
 		866B30FD190BA25B001036AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FC190BA25B001036AF /* CoreGraphics.framework */; };
 		866B30FF190BA25B001036AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FE190BA25B001036AF /* UIKit.framework */; };
@@ -151,6 +152,10 @@
 		8657DE76190E0AD500BB650F /* GlassSphereShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlassSphereShader.fsh; sourceTree = "<group>"; };
 		8657DE78190E165F00BB650F /* AccumulationShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = AccumulationShader.vsh; sourceTree = "<group>"; };
 		8657DE79190E166900BB650F /* AccumulationShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = AccumulationShader.fsh; sourceTree = "<group>"; };
+		8657DE7B190E636300BB650F /* CylinderObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CylinderObject.h; sourceTree = "<group>"; };
+		8657DE7C190E636300BB650F /* CylinderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CylinderObject.m; sourceTree = "<group>"; };
+		8657DE7E190EBAF600BB650F /* CylinderShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CylinderShader.vsh; sourceTree = "<group>"; };
+		8657DE7F190EBB2800BB650F /* CylinderShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CylinderShader.fsh; sourceTree = "<group>"; };
 		866B30F7190BA25B001036AF /* SnowGlobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowGlobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		866B30FA190BA25B001036AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		866B30FC190BA25B001036AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -424,14 +429,16 @@
 		866B3170190BA77B001036AF /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				8657DE78190E165F00BB650F /* AccumulationShader.vsh */,
+				8657DE79190E166900BB650F /* AccumulationShader.fsh */,
+				8657DE7E190EBAF600BB650F /* CylinderShader.vsh */,
+				8657DE7F190EBB2800BB650F /* CylinderShader.fsh */,
 				866B3147190BA2BB001036AF /* Shader.vsh */,
 				866B3146190BA2BB001036AF /* Shader.fsh */,
 				867DCE6B190C7ABD0066E31B /* SnowShader.vsh */,
 				867DCE6C190C7AC70066E31B /* SnowShader.fsh */,
 				8657DE74190E0AC600BB650F /* GlassSphereShader.vsh */,
 				8657DE76190E0AD500BB650F /* GlassSphereShader.fsh */,
-				8657DE78190E165F00BB650F /* AccumulationShader.vsh */,
-				8657DE79190E166900BB650F /* AccumulationShader.fsh */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -461,6 +468,8 @@
 				867DCF30190CAA650066E31B /* House4Object.m */,
 				867DCF5A190DCAFE0066E31B /* GlassSphere.h */,
 				867DCF5B190DCAFE0066E31B /* GlassSphere.m */,
+				8657DE7B190E636300BB650F /* CylinderObject.h */,
+				8657DE7C190E636300BB650F /* CylinderObject.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -845,6 +854,7 @@
 				866B314C190BA2BB001036AF /* ViewController.m in Sources */,
 				866B310B190BA25B001036AF /* AppDelegate.m in Sources */,
 				866B3175190C5AAA001036AF /* HouseObject.m in Sources */,
+				8657DE7D190E636300BB650F /* CylinderObject.m in Sources */,
 				866B3107190BA25B001036AF /* main.m in Sources */,
 				866B3163190BA2BB001036AF /* ShaderProcessor.m in Sources */,
 			);
