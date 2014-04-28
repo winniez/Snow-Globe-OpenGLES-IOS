@@ -12,6 +12,7 @@ static const char* SnowShaderV = STRINGIFY
   
   // Uniforms
   uniform mat4        u_ProjectionMatrix;
+  uniform mat4        u_ModelViewMatrix;
   uniform vec3        u_Gravity;
   uniform float       u_Time;
   uniform float       u_eVelocity;
@@ -41,16 +42,16 @@ static const char* SnowShaderV = STRINGIFY
         float y1 = a_pStartPosition.y + (u_Gravity.y * time);
         float z1 = a_pStartPosition.z + (u_Gravity.z * time);
         //s = mix(u_eSizeStart, u_eSizeEnd, time);
-        if (y1 < - 1.0)
+        if (y1 < - 0.6)
         {
-            y1 = - 1.0;
+            y1 = - 0.6;
             x1 = a_pStartPosition.x + (u_Gravity.x * (-1.0 - a_pStartPosition.y)/u_Gravity.y);
             z1 = a_pStartPosition.z + (u_Gravity.z * (-1.0 - a_pStartPosition.y)/u_Gravity.y);
         }
         position = vec3(x1,y1,z1);
     }
     
-    gl_Position = u_ProjectionMatrix * vec4(position, 1.0);
+    gl_Position = u_ProjectionMatrix * u_ModelViewMatrix * vec4(position, 1.0);
     gl_PointSize = max(0.0, (u_eSize + a_pSizeOffset));
     
     // Fragment Shader outputs

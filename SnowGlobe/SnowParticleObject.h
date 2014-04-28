@@ -13,7 +13,7 @@
 #import "ShaderProcessor.h"
 #import "Utility.h"
 
-#define NUM_PARTICLES 1024
+#define NUM_PARTICLES 4096
 
 typedef struct Particle
 {
@@ -62,7 +62,8 @@ Emitter;
 - (id)initWithTexture:(NSString *)fileName;
 - (void)loadTexture:(NSString *)fileName;
 - (void) loadShader;
-- (void)renderWithProjection:(GLKMatrix4)projectionMatrix;
+- (GLKVector3) generateStartPosition;
+- (void)renderWithProjection:(GLKMatrix4)projectionMatrix MVMatrix :(GLKMatrix4) modelViewMatrix;
 - (void)updateLifeCycle:(float)timeElapsed;
 - (void)loadParticleSystem;
 

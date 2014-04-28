@@ -56,6 +56,8 @@
     [self.groundObj setScale:1.6f];
     // Set up Emitter
     self.snowEmitter = [[SnowParticleObject alloc] initWithTexture:@"snowflake-transparent-5.png"];
+    [self.snowEmitter setCoord:GLKVector3Make(0.0f, 0.5f, 0.0f)];
+    [self.snowEmitter setScale:1.2f];
 
 }
 
@@ -83,7 +85,7 @@
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     // Clear Buffers
-    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+    glClearColor(0.111f, 0.111f, 0.439f, 1.0f);
     //glClearColor(1.0, 1.0, 1.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
@@ -93,7 +95,7 @@
     [self.houseObj displayWith : _projectionMatrix MVMatrix : _modelViewMatrix NMatrix : _normalMatrix];
     [self.groundObj displayWith:_projectionMatrix MVMatrix:_modelViewMatrix NMatrix:_normalMatrix];
     
-    [self.snowEmitter renderWithProjection:_projectionMatrix];
+    [self.snowEmitter renderWithProjection:_projectionMatrix MVMatrix : _modelViewMatrix];
 }
 
 # pragma mark - GLKViewController Delegate

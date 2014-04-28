@@ -23,6 +23,8 @@
         _life = 0.0f;
         _time = 0.0f;
         _particleBuffer = 0;
+        _scale = 1.0f;
+        _coord = GLKVector3Make(0.0f, 0.0f, 0.0f);
         // Load Shader
         [self loadShader];
         // Load Texture
@@ -50,6 +52,7 @@
     
     // Uniforms
     _uniforms.u_ProjectionMatrix = glGetUniformLocation(_program, "u_ProjectionMatrix");
+    _uniforms.u_ModelViewMatrix = glGetUniformLocation(_program, "u_ModelViewMatrix");
     _uniforms.u_Gravity = glGetUniformLocation(_program, "u_Gravity");
     _uniforms.u_Time = glGetUniformLocation(_program, "u_Time");
     _uniforms.u_eVelocity = glGetUniformLocation(_program, "u_eVelocity");
@@ -78,7 +81,8 @@
     for(int i=0; i<NUM_PARTICLES; i++)
     {
         // Assign random offsets within bounds
-        newEmitter.eParticles[i].pStartPosition = GLKVector3Make([self randomFloatBetween:-1.0f and:1.0f], [self randomFloatBetween:1.5f and:2.0f], [self randomFloatBetween:-1.0f and:1.0f]);
+        newEmitter.eParticles[i].pStartPosition = [self generateStartPosition];
+        //GLKVector3Make([self randomFloatBetween:-1.0f and:1.0f], [self randomFloatBetween:1.5f and:2.0f], [self randomFloatBetween:-1.0f and:1.0f]);
         newEmitter.eParticles[i].pVelocityOffset = [self randomFloatBetween:-oVelocity and:oVelocity];
         newEmitter.eParticles[i].pDecayOffset = [self randomFloatBetween:-oDecay and:oDecay];
         newEmitter.eParticles[i].pSizeOffset = [self randomFloatBetween:-oSize and:oSize];
@@ -117,14 +121,23 @@
     
 }
 
-- (void)renderWithProjection:(GLKMatrix4)projectionMatrix
+- (void)renderWithProjection:(GLKMatrix4)projectionMatrix MVMatrix :(GLKMatrix4) modelViewMatrix
 {
+    // transform
+    GLKMatrix4 mvMatrix = GLKMatrix4TranslateWithVector3(modelViewMatrix, _coord);
+    mvMatrix = GLKMatrix4Scale(mvMatrix, _scale, _scale, _scale);
+    
+    GLKMatrix3 norMatrix = GLKMatrix3Identity;
+    bool isInvertible;
+    norMatrix = GLKMatrix4GetMatrix3(GLKMatrix4InvertAndTranspose(mvMatrix, &isInvertible));
+    
     glUseProgram(_program);
     // Switch Buffers
     glBindBuffer(GL_ARRAY_BUFFER, _particleBuffer);
     
     // Uniforms
     glUniformMatrix4fv(_uniforms.u_ProjectionMatrix, 1, 0, projectionMatrix.m);
+    glUniformMatrix4fv(_uniforms.u_ModelViewMatrix, 1, 0, mvMatrix.m);
     glUniform3f(_uniforms.u_Gravity, _gravity.x, _gravity.y, _gravity.z);
     glUniform1f(_uniforms.u_Time, _time);
     glUniform1f(_uniforms.u_eVelocity, self.emitter.eVelocity);
@@ -170,6 +183,20 @@
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glUseProgram(0);
     
+}
+
+- (GLKVector3) generateStartPosition
+{
+    double radius = 1.0f;
+    float r = [self randomFloatBetween:0.0f and:radius];
+    double theta = (double)[self randomFloatBetween:0 and: 2 * M_PI];
+    double phi = (double)[self randomFloatBetween:0 and: 0.8 * M_PI];
+    
+    float x = r * (float)cos(theta) * (float)sin(phi);
+    float y = r * (float)cos(phi);
+    float z = r * (float)sin(theta) * (float)sin(phi);
+    
+    return GLKVector3Make(x, y, z);
 }
 
 - (float)randomFloatBetween:(float)min and:(float)max

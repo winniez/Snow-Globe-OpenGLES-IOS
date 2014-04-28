@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SnowGlobe/ViewController.m"
-            timestampString = "420346800.490975"
+            timestampString = "420365477.622622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "@implementation ViewController"
             landmarkType = "3">
          </BreakpointContent>

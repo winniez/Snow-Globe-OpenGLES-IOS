@@ -36,14 +36,14 @@
     _normals = malloc(size*sizeof(float));
     int k = 0;
     for (j = 0; j < stacks; j++) {
-        double latitude1 = (M_1_PI/stacks) * j - M_2_PI;
-        double latitude2 = (M_1_PI/stacks) * (j+1) - M_2_PI;
+        double latitude1 = (M_PI/stacks) * j - M_PI_2;
+        double latitude2 = (M_PI/stacks) * (j+1) - M_PI_2;
         double sinLat1 = sin(latitude1);
         double cosLat1 = cos(latitude1);
         double sinLat2 = sin(latitude2);
         double cosLat2 = cos(latitude2);
         for (i = 0; i <= slices; i++) {
-            double longitude = (2*M_1_PI/slices) * i;
+            double longitude = (2*M_PI/slices) * i;
             double sinLong = sin(longitude);
             double cosLong = cos(longitude);
             double x1 = cosLong * cosLat1;
