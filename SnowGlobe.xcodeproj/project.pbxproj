@@ -39,6 +39,8 @@
 		867DCEED190CA9480066E31B /* WindowsManor1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEB3190CA9480066E31B /* WindowsManor1.jpg */; };
 		867DCEEE190CA9480066E31B /* WindowsManor2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEB4190CA9480066E31B /* WindowsManor2.jpg */; };
 		867DCF5C190DCAFE0066E31B /* GlassSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 867DCF5B190DCAFE0066E31B /* GlassSphere.m */; };
+		86ADAA511910501D002ED54E /* Grass_Texture_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 86ADAA4F1910501D002ED54E /* Grass_Texture_02.jpg */; };
+		86ADAA521910501D002ED54E /* snowflake-transparent-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 86ADAA501910501D002ED54E /* snowflake-transparent-5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +56,6 @@
 /* Begin PBXFileReference section */
 		8657DE74190E0AC600BB650F /* GlassSphereShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlassSphereShader.vsh; sourceTree = "<group>"; };
 		8657DE76190E0AD500BB650F /* GlassSphereShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlassSphereShader.fsh; sourceTree = "<group>"; };
-		8657DE78190E165F00BB650F /* AccumulationShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = AccumulationShader.vsh; sourceTree = "<group>"; };
-		8657DE79190E166900BB650F /* AccumulationShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = AccumulationShader.fsh; sourceTree = "<group>"; };
 		8657DE7B190E636300BB650F /* CylinderObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CylinderObject.h; sourceTree = "<group>"; };
 		8657DE7C190E636300BB650F /* CylinderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CylinderObject.m; sourceTree = "<group>"; };
 		8657DE7E190EBAF600BB650F /* CylinderShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CylinderShader.vsh; sourceTree = "<group>"; };
@@ -108,6 +108,8 @@
 		867DCEB4190CA9480066E31B /* WindowsManor2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WindowsManor2.jpg; sourceTree = "<group>"; };
 		867DCF5A190DCAFE0066E31B /* GlassSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlassSphere.h; sourceTree = "<group>"; };
 		867DCF5B190DCAFE0066E31B /* GlassSphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlassSphere.m; sourceTree = "<group>"; };
+		86ADAA4F1910501D002ED54E /* Grass_Texture_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Grass_Texture_02.jpg; sourceTree = "<group>"; };
+		86ADAA501910501D002ED54E /* snowflake-transparent-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowflake-transparent-5.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 		866B312B190BA2BB001036AF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				86ADAA4E1910501D002ED54E /* Texture */,
 				867DCE9A190CA9480066E31B /* SpookyManor */,
 			);
 			name = Resource;
@@ -205,8 +208,6 @@
 		866B3170190BA77B001036AF /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				8657DE78190E165F00BB650F /* AccumulationShader.vsh */,
-				8657DE79190E166900BB650F /* AccumulationShader.fsh */,
 				8657DE7E190EBAF600BB650F /* CylinderShader.vsh */,
 				8657DE7F190EBB2800BB650F /* CylinderShader.fsh */,
 				866B3147190BA2BB001036AF /* Shader.vsh */,
@@ -276,6 +277,16 @@
 			);
 			name = SpookyManor;
 			sourceTree = "<group>";
+		};
+		86ADAA4E1910501D002ED54E /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				86ADAA4F1910501D002ED54E /* Grass_Texture_02.jpg */,
+				86ADAA501910501D002ED54E /* snowflake-transparent-5.png */,
+			);
+			name = Texture;
+			path = SnowGlobe/Texture;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -356,6 +367,8 @@
 				867DCEE9190CA9480066E31B /* Snowz001.jpg in Resources */,
 				867DCEEE190CA9480066E31B /* WindowsManor2.jpg in Resources */,
 				867DCEE8190CA9480066E31B /* Snow0AE1.jpg in Resources */,
+				86ADAA511910501D002ED54E /* Grass_Texture_02.jpg in Resources */,
+				86ADAA521910501D002ED54E /* snowflake-transparent-5.png in Resources */,
 				867DCEED190CA9480066E31B /* WindowsManor1.jpg in Resources */,
 				866B3105190BA25B001036AF /* InfoPlist.strings in Resources */,
 				867DCEEA190CA9480066E31B /* Stone1.jpg in Resources */,

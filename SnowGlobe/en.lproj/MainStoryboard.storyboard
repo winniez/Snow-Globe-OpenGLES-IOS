@@ -3,7 +3,6 @@
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--GLKit View Controller-->
@@ -19,11 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Double Tab with 2 fingers to make it Snow!" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbf-rr-vVa">
-                                <rect key="frame" x="28" y="102" width="328" height="21"/>
+                                <rect key="frame" x="20" y="50" width="328" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="nbf-rr-vVa" secondAttribute="height" multiplier="328:21" id="cXE-0z-Jg5"/>
-                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Use 2 fingers to rotate." textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIt-xD-mNt">
+                                <rect key="frame" x="20" y="104" width="176" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -31,7 +34,12 @@
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="nbf-rr-vVa" firstAttribute="leading" secondItem="bMa-TE-4g7" secondAttribute="leading" constant="50" id="hn6-0e-iAE"/>
+                            <constraint firstAttribute="trailing" secondItem="nbf-rr-vVa" secondAttribute="trailing" constant="20" symbolic="YES" id="DbL-kb-mlX"/>
+                            <constraint firstItem="aIt-xD-mNt" firstAttribute="leading" secondItem="bMa-TE-4g7" secondAttribute="leading" constant="20" symbolic="YES" id="Hyr-dT-P7w"/>
+                            <constraint firstItem="nbf-rr-vVa" firstAttribute="leading" secondItem="bMa-TE-4g7" secondAttribute="leading" constant="20" symbolic="YES" id="LvH-hM-FVe"/>
+                            <constraint firstItem="aIt-xD-mNt" firstAttribute="leading" secondItem="bMa-TE-4g7" secondAttribute="leading" id="Oem-VY-hgF"/>
+                            <constraint firstAttribute="trailing" secondItem="aIt-xD-mNt" secondAttribute="trailing" constant="20" symbolic="YES" id="VH8-xG-SFf"/>
+                            <constraint firstItem="nbf-rr-vVa" firstAttribute="leading" secondItem="bMa-TE-4g7" secondAttribute="leading" id="sBF-Ta-WJu"/>
                         </constraints>
                         <connections>
                             <outlet property="delegate" destination="f7W-BS-kgy" id="CQm-Yk-aPS"/>

@@ -28,13 +28,13 @@
                     @"WindowsManor2.jpg", nil];
     
     // Load textures
-    [self loadTexture :(NSString *)textureFiles[0] Index : 1];
-    [self loadTexture :(NSString *)textureFiles[1] Index : 2];
-    [self loadTexture :(NSString *)textureFiles[2] Index : 3];
-    [self loadTexture :(NSString *)textureFiles[3] Index : 4];
-    [self loadTexture :(NSString *)textureFiles[4] Index : 5];
-    [self loadTexture :(NSString *)textureFiles[5] Index : 6];
-    [self loadTexture :(NSString *)textureFiles[6] Index : 7];
+    _textures[1] = [self loadTexture :(NSString *)textureFiles[0]];
+    _textures[2] = [self loadTexture :(NSString *)textureFiles[1]];
+    _textures[3] = [self loadTexture :(NSString *)textureFiles[2]];
+    _textures[4] = [self loadTexture :(NSString *)textureFiles[3]];
+    _textures[5] = [self loadTexture :(NSString *)textureFiles[4]];
+    _textures[6] = [self loadTexture :(NSString *)textureFiles[5]];
+    _textures[7] = [self loadTexture :(NSString *)textureFiles[6]];
     
     _scale = 1.0f;
     _coord = GLKVector3Make(0.0f, 0.0f, 0.0f);
@@ -147,7 +147,7 @@
 }
 
 
-- (void)loadTexture:(NSString *)fileName Index : (int)index
+- (GLuint)loadTexture:(NSString *)fileName
 {
     NSDictionary* options = @{[NSNumber numberWithBool:YES] : GLKTextureLoaderOriginBottomLeft};
     
@@ -155,8 +155,11 @@
     NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
     GLKTextureInfo* texture = [GLKTextureLoader textureWithContentsOfFile:path options:options error:&error];
     if(texture == nil)
+    {
         NSLog(@"Error loading file: %@", [error localizedDescription]);
-    _textures[index] = texture.name;
+        return -1;
+    }
+    return texture.name;
 }
 
 - (void) setCoord : (GLKVector3) newcoord

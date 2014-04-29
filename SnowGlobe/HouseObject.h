@@ -10,8 +10,7 @@
 #import <GLKit/GLKit.h>
 
 #import "Utility.h"
-//#define NUM_MTL 8
-#define NUM_MTL 11
+#define NUM_MTL 8
 // Shaders
 #import "ShaderProcessor.h"
 
