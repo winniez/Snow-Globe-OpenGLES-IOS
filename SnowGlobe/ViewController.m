@@ -49,23 +49,52 @@
     // Initialize Model Pose
     self.transformations = [[Transformations alloc] initWithDepth:5.0f Scale:1.33f Translation:GLKVector2Make(0.0f, 0.0f) Rotation:GLKVector3Make(0.0f, 0.0f, 0.0f)];
     
+    // Set lighting parameters
+    _ambient = GLKVector3Make(0.5f, 0.5f, 0.5f);
+    _diffuse = GLKVector3Make(0.5f, 0.5f, 0.5f);
+    _specular = GLKVector3Make(0.0f, 0.0f, 0.0f);
+    _exponent = 1.0f;
+    
+    // Set time parameters
+    _time = 0.0f;
+    _stoptime = 15.0f;
+    _deltaSnow = 0.01f;
+    
     // Initialize objects
-    self.houseObj = [[HouseObject alloc] loadObject];
-    self.groundObj = [[GroundObject alloc] loadObject];
-    [self.groundObj setCoord:GLKVector3Make(0.27f, -0.125f, 0.0f)];
-    [self.groundObj setScale:1.6f];
+    self.houseObj = [[HouseObject alloc] loadObject : _stoptime DeltaSnow:_deltaSnow];
+    [self.houseObj setCoord:GLKVector3Make(0.0f, -0.054f, 0.0f)];
+    [self.houseObj setScale:1.1f];
+    
+    //self.groundObj = [[GroundObject alloc] loadObject : _stoptime];
+    //[self.groundObj setCoord:GLKVector3Make(0.27f, -0.125f, 0.0f)];
+    //[self.groundObj setScale:1.6f];
+    
+    // Set up circle plane ground
+    self.circlePlaneObj = [[CirclePlaneObject alloc] loadObject : _stoptime DeltaSnow:_deltaSnow];
+    float h = -0.25f;
+    float theta = coshf(h);
+    float circleScale = sinf(theta);
+    //[self.circlePlaneObj setScale:circleScale];
+    [self.circlePlaneObj setCoord:GLKVector3Make(0.0f, h, 0.0f)];
+    
     // Set up Emitter
-    self.snowEmitter = [[SnowParticleObject alloc] initWithTexture:@"snowflake-transparent-5.png"];
-    [self.snowEmitter setCoord:GLKVector3Make(0.0f, 0.5f, 0.0f)];
-    [self.snowEmitter setScale:1.2f];
-
+    self.snowEmitter = [[SnowParticleObject alloc] initWithTexture:@"snowflake-transparent-5.png" StopTime: _stoptime];
+    [self.snowEmitter setCoord:GLKVector3Make(0.0f, 0.0f, 0.0f)];
+    [self.snowEmitter setScale:1.0f];
+    
+    // Set up sphere
+    self.sphereObj = [[GlassSphere alloc] loadObject];
+    [self.sphereObj setScale:1.0f];
+    // set up sphere stand
+    self.cylinderObj = [[CylinderObject alloc] loadObject];
+    [self.cylinderObj setCoord:GLKVector3Make(0.0f, -0.65f, 0.0f)];
+    
 }
 
 - (void) update
 {
     [self updateViewMatrices];
-    // Update Emitter
-    [self.snowEmitter updateLifeCycle:self.timeSinceLastUpdate];
+    _time += self.timeSinceLastUpdate;
 }
 
 - (void)updateViewMatrices
@@ -92,10 +121,33 @@
     // Set View Matrices
     [self updateViewMatrices];
     
-    [self.houseObj displayWith : _projectionMatrix MVMatrix : _modelViewMatrix NMatrix : _normalMatrix];
-    [self.groundObj displayWith:_projectionMatrix MVMatrix:_modelViewMatrix NMatrix:_normalMatrix];
+    [self.houseObj displayWith : _projectionMatrix MVMatrix : _modelViewMatrix
+                       NMatrix : _normalMatrix Ambient:_ambient
+                        Diffuse:_diffuse Specular:_specular
+                         EyeDir:_eyedir Exponent:_exponent CurrentTime:_time];
+    [self.circlePlaneObj displayWith:_projectionMatrix
+                            MVMatrix:_modelViewMatrix NMatrix:_normalMatrix Ambient:_ambient
+                             Diffuse:_diffuse Specular:_specular
+                              EyeDir:_eyedir Exponent:_exponent CurrentTime:_time];
+    /*
+    [self.groundObj displayWith:_projectionMatrix MVMatrix:_modelViewMatrix
+                        NMatrix:_normalMatrix Ambient:_ambient
+                        Diffuse:_diffuse Specular:_specular
+                         EyeDir:_eyedir Exponent:_exponent];
+     */
     
-    [self.snowEmitter renderWithProjection:_projectionMatrix MVMatrix : _modelViewMatrix];
+    [self.snowEmitter renderWithProjection:_projectionMatrix MVMatrix : _modelViewMatrix  CurrentTime:_time];
+    [self.sphereObj displayWith:_projectionMatrix
+                       MVMatrix:_modelViewMatrix NMatrix:_normalMatrix Ambient:_ambient
+                        Diffuse:_diffuse Specular:_specular
+                         EyeDir:_eyedir Exponent:_exponent];
+    
+    
+    [self.cylinderObj displayWith:_projectionMatrix MVMatrix:_modelViewMatrix NMatrix:_normalMatrix
+                          Ambient:_ambient
+                          Diffuse:_diffuse Specular:_specular
+                           EyeDir:_eyedir Exponent:_exponent];
+     
 }
 
 # pragma mark - GLKViewController Delegate
@@ -128,6 +180,11 @@
 {
     // Begin transformations
     [self.transformations start];
+}
+
+- (void) resetTime
+{
+    _time = 0.0f;
 }
 
 - (IBAction)pan:(UIPanGestureRecognizer *)sender
@@ -170,6 +227,12 @@
         float rotation = [sender rotation];
         [self.transformations rotate:GLKVector3Make(0.0f, 0.0f, rotation) withMultiplier:1.0f];
     }
+}
+
+- (IBAction) tap: (UITapGestureRecognizer *)sender
+{
+    // Tap
+    [self resetTime];
 }
 
 @end

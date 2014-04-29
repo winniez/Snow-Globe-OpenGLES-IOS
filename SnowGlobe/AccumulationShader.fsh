@@ -1,6 +1,6 @@
 // FRAGMENT SHADER
 
-static const char* ShaderF = STRINGIFY
+static const char* AccumulationShaderF = STRINGIFY
 (
  
  // Input from Vertex Shader

@@ -28,17 +28,24 @@
     
     GLKVector3      _coord;
     GLfloat         _scale;
+    float           _stoptime;
 }
 @property (strong, nonatomic) ShaderProcessor* shaderProcessor;
 
 
-- (id) loadObject;
+- (id) loadObject: (float) stoptime;
 
 - (void) loadTexture:(NSString *)fileName Index : (int)index;
 
 - (void) displayWith : (GLKMatrix4) projectionMatrix
             MVMatrix :(GLKMatrix4) modelViewMatrix
-             NMatrix :(GLKMatrix3) normalMatrix;
+             NMatrix :(GLKMatrix3) normalMatrix
+              Ambient: (GLKVector3) ambient
+             Diffuse : (GLKVector3) diffuse
+             Specular: (GLKVector3) specular
+               EyeDir: (GLKVector3) eyedir
+            Exponent : (float) exponent
+          CurrentTime: (float) time;
 
 - (void) setCoord : (GLKVector3) newcoord;
 - (void) setScale : (GLfloat) scale;

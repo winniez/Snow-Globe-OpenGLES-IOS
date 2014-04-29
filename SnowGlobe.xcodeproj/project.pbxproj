@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8657DE7D190E636300BB650F /* CylinderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8657DE7C190E636300BB650F /* CylinderObject.m */; };
+		8657DE86190EE74600BB650F /* CirclePlaneObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8657DE85190EE74600BB650F /* CirclePlaneObject.m */; };
 		866B30FB190BA25B001036AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FA190BA25B001036AF /* Foundation.framework */; };
 		866B30FD190BA25B001036AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FC190BA25B001036AF /* CoreGraphics.framework */; };
 		866B30FF190BA25B001036AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FE190BA25B001036AF /* UIKit.framework */; };
@@ -17,63 +19,15 @@
 		866B3114190BA25B001036AF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B3113190BA25B001036AF /* XCTest.framework */; };
 		866B3115190BA25B001036AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FA190BA25B001036AF /* Foundation.framework */; };
 		866B3116190BA25B001036AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866B30FE190BA25B001036AF /* UIKit.framework */; };
-		866B311E190BA25B001036AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 866B311C190BA25B001036AF /* InfoPlist.strings */; };
-		866B3120190BA25B001036AF /* SnowGlobeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 866B311F190BA25B001036AF /* SnowGlobeTests.m */; };
 		866B314C190BA2BB001036AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 866B3129190BA2BB001036AF /* ViewController.m */; };
 		866B3163190BA2BB001036AF /* ShaderProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 866B3149190BA2BB001036AF /* ShaderProcessor.m */; };
 		866B3164190BA2BB001036AF /* Transformations.m in Sources */ = {isa = PBXBuildFile; fileRef = 866B314B190BA2BB001036AF /* Transformations.m */; };
 		866B316E190BA30A001036AF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866B316C190BA30A001036AF /* MainStoryboard.storyboard */; };
 		866B3175190C5AAA001036AF /* HouseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 866B3174190C5AAA001036AF /* HouseObject.m */; };
-		867DCE64190C73EF0066E31B /* GroundObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 867DCE63190C73EF0066E31B /* GroundObject.m */; };
 		867DCE67190C74060066E31B /* SnowParticleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 867DCE66190C74060066E31B /* SnowParticleObject.m */; };
-		867DCEB5190CA9480066E31B /* mh03.lwo in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE71190CA9480066E31B /* mh03.lwo */; };
-		867DCEB6190CA9480066E31B /* mh03.max in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE72190CA9480066E31B /* mh03.max */; };
-		867DCEB7190CA9480066E31B /* mh03.mb in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE73190CA9480066E31B /* mh03.mb */; };
-		867DCEB8190CA9480066E31B /* mh03.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE74190CA9480066E31B /* mh03.mtl */; };
-		867DCEB9190CA9480066E31B /* mh03.obj in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE75190CA9480066E31B /* mh03.obj */; };
-		867DCEBA190CA9480066E31B /* _ivy_d.tga in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE79190CA9480066E31B /* _ivy_d.tga */; };
-		867DCEBB190CA9480066E31B /* _ivy_o.tga in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE7A190CA9480066E31B /* _ivy_o.tga */; };
-		867DCEBC190CA9480066E31B /* brudoorupper02.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE7B190CA9480066E31B /* brudoorupper02.dds */; };
-		867DCEBD190CA9480066E31B /* brudoorupper02_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE7C190CA9480066E31B /* brudoorupper02_n.dds */; };
-		867DCEBE190CA9480066E31B /* door_big.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE7D190CA9480066E31B /* door_big.dds */; };
-		867DCEBF190CA9480066E31B /* door_big_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE7E190CA9480066E31B /* door_big_n.dds */; };
-		867DCEC0190CA9480066E31B /* PlasterWhiteDirty0030_M.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE7F190CA9480066E31B /* PlasterWhiteDirty0030_M.jpg */; };
-		867DCEC1190CA9480066E31B /* PlasterWhiteDirty0070_M.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE80190CA9480066E31B /* PlasterWhiteDirty0070_M.jpg */; };
-		867DCEC2190CA9480066E31B /* potted_plants.tga in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE81190CA9480066E31B /* potted_plants.tga */; };
-		867DCEC3190CA9480066E31B /* prioryroof01.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE82190CA9480066E31B /* prioryroof01.dds */; };
-		867DCEC4190CA9480066E31B /* prioryroof01_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE83190CA9480066E31B /* prioryroof01_n.dds */; };
-		867DCEC5190CA9480066E31B /* rf1xintstonea.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE84190CA9480066E31B /* rf1xintstonea.dds */; };
-		867DCEC6190CA9480066E31B /* rf1xintstonea_NRM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE85190CA9480066E31B /* rf1xintstonea_NRM.jpg */; };
-		867DCEC7190CA9480066E31B /* roof_slate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE86190CA9480066E31B /* roof_slate.jpg */; };
-		867DCEC8190CA9480066E31B /* roof_slate_bm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE87190CA9480066E31B /* roof_slate_bm.jpg */; };
-		867DCEC9190CA9480066E31B /* roof_slate_bm_NRM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE88190CA9480066E31B /* roof_slate_bm_NRM.jpg */; };
-		867DCECA190CA9480066E31B /* skstone.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE89190CA9480066E31B /* skstone.dds */; };
-		867DCECB190CA9480066E31B /* skstone_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE8A190CA9480066E31B /* skstone_n.dds */; };
-		867DCECC190CA9480066E31B /* Slate-Bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE8B190CA9480066E31B /* Slate-Bump.jpg */; };
-		867DCECD190CA9480066E31B /* Slate-Bump_NRM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE8C190CA9480066E31B /* Slate-Bump_NRM.jpg */; };
-		867DCECE190CA9480066E31B /* Slate-color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE8D190CA9480066E31B /* Slate-color.jpg */; };
-		867DCECF190CA9480066E31B /* standard_crates.tga in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE8E190CA9480066E31B /* standard_crates.tga */; };
-		867DCED0190CA9480066E31B /* tree_deciduous_01a_trunk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE8F190CA9480066E31B /* tree_deciduous_01a_trunk.jpg */; };
-		867DCED1190CA9480066E31B /* wall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE90190CA9480066E31B /* wall.jpg */; };
-		867DCED2190CA9480066E31B /* wallplastertanint02.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE91190CA9480066E31B /* wallplastertanint02.dds */; };
-		867DCED3190CA9480066E31B /* wallplastertanint02_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE92190CA9480066E31B /* wallplastertanint02_n.dds */; };
-		867DCED4190CA9480066E31B /* windows.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE93190CA9480066E31B /* windows.jpg */; };
-		867DCED5190CA9480066E31B /* windows_doors1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE94190CA9480066E31B /* windows_doors1.jpg */; };
-		867DCED6190CA9480066E31B /* wood.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE95190CA9480066E31B /* wood.dds */; };
-		867DCED7190CA9480066E31B /* wood01.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE96190CA9480066E31B /* wood01.dds */; };
-		867DCED8190CA9480066E31B /* wood01_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE97190CA9480066E31B /* wood01_n.dds */; };
-		867DCED9190CA9480066E31B /* wood_ddn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE98190CA9480066E31B /* wood_ddn.jpg */; };
-		867DCEDA190CA9480066E31B /* woodbarrel001.tga in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE99190CA9480066E31B /* woodbarrel001.tga */; };
 		867DCEDB190CA9480066E31B /* BordersManor1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE9B190CA9480066E31B /* BordersManor1.jpg */; };
 		867DCEDC190CA9480066E31B /* FloorManor1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE9C190CA9480066E31B /* FloorManor1.jpg */; };
-		867DCEDD190CA9480066E31B /* Manor.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE9D190CA9480066E31B /* Manor.mtl */; };
 		867DCEDE190CA9480066E31B /* Manor.obj in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE9E190CA9480066E31B /* Manor.obj */; };
-		867DCEDF190CA9480066E31B /* ManorGround.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 867DCE9F190CA9480066E31B /* ManorGround.mtl */; };
-		867DCEE0190CA9480066E31B /* ManorGround.obj in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEA0190CA9480066E31B /* ManorGround.obj */; };
-		867DCEE1190CA9480066E31B /* ManorGround1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEA1190CA9480066E31B /* ManorGround1.jpg */; };
-		867DCEE2190CA9480066E31B /* ManorSky.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEA6190CA9480066E31B /* ManorSky.mtl */; };
-		867DCEE3190CA9480066E31B /* ManorSky.obj in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEA7190CA9480066E31B /* ManorSky.obj */; };
-		867DCEE4190CA9480066E31B /* mtl2opengl.pl in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEAA190CA9480066E31B /* mtl2opengl.pl */; };
 		867DCEE5190CA9480066E31B /* PillarsManor1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEAB190CA9480066E31B /* PillarsManor1.jpg */; };
 		867DCEE6190CA9480066E31B /* RoofManor1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEAC190CA9480066E31B /* RoofManor1.jpg */; };
 		867DCEE7190CA9480066E31B /* RustyFence1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEAD190CA9480066E31B /* RustyFence1.jpg */; };
@@ -84,55 +38,6 @@
 		867DCEEC190CA9480066E31B /* WallsManor1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEB2190CA9480066E31B /* WallsManor1.jpg */; };
 		867DCEED190CA9480066E31B /* WindowsManor1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEB3190CA9480066E31B /* WindowsManor1.jpg */; };
 		867DCEEE190CA9480066E31B /* WindowsManor2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEB4190CA9480066E31B /* WindowsManor2.jpg */; };
-		867DCF11190CAA470066E31B /* MAXFILES.TXT in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEF0190CAA470066E31B /* MAXFILES.TXT */; };
-		867DCF12190CAA470066E31B /* med_house_final.lwo in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEF1190CAA470066E31B /* med_house_final.lwo */; };
-		867DCF13190CAA470066E31B /* med_house_final.max in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEF2190CAA470066E31B /* med_house_final.max */; };
-		867DCF14190CAA470066E31B /* med_house_final.mb in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEF3190CAA470066E31B /* med_house_final.mb */; };
-		867DCF15190CAA470066E31B /* med_house_final.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEF4190CAA470066E31B /* med_house_final.mtl */; };
-		867DCF16190CAA470066E31B /* med_house_final.obj in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEF5190CAA470066E31B /* med_house_final.obj */; };
-		867DCF17190CAA470066E31B /* arenastonegrey08.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEF9190CAA470066E31B /* arenastonegrey08.dds */; };
-		867DCF18190CAA470066E31B /* arenastonegrey08_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEFA190CAA470066E31B /* arenastonegrey08_n.dds */; };
-		867DCF19190CAA470066E31B /* flatstone01.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEFB190CAA470066E31B /* flatstone01.dds */; };
-		867DCF1A190CAA470066E31B /* flatstone01_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEFC190CAA470066E31B /* flatstone01_n.dds */; };
-		867DCF1B190CAA470066E31B /* rf1xintstonea.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEFD190CAA470066E31B /* rf1xintstonea.dds */; };
-		867DCF1C190CAA470066E31B /* rf1xintstonea_NRM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEFE190CAA470066E31B /* rf1xintstonea_NRM.jpg */; };
-		867DCF1D190CAA470066E31B /* roof_entrance.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCEFF190CAA470066E31B /* roof_entrance.dds */; };
-		867DCF1E190CAA470066E31B /* roof_entrance_ddn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF00190CAA470066E31B /* roof_entrance_ddn.jpg */; };
-		867DCF1F190CAA470066E31B /* roof_slate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF01190CAA470066E31B /* roof_slate.jpg */; };
-		867DCF20190CAA470066E31B /* roof_slate_bm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF02190CAA470066E31B /* roof_slate_bm.jpg */; };
-		867DCF21190CAA470066E31B /* roof_slate_bm_NRM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF03190CAA470066E31B /* roof_slate_bm_NRM.jpg */; };
-		867DCF22190CAA470066E31B /* stone05.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF04190CAA470066E31B /* stone05.dds */; };
-		867DCF23190CAA470066E31B /* stone05_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF05190CAA470066E31B /* stone05_n.dds */; };
-		867DCF24190CAA470066E31B /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF06190CAA470066E31B /* Thumbs.db */; };
-		867DCF25190CAA470066E31B /* trim01.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF07190CAA470066E31B /* trim01.dds */; };
-		867DCF26190CAA470066E31B /* trim01_NRM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF08190CAA470066E31B /* trim01_NRM.jpg */; };
-		867DCF27190CAA470066E31B /* upperfloor01.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF09190CAA470066E31B /* upperfloor01.dds */; };
-		867DCF28190CAA470066E31B /* upperfloor01_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF0A190CAA470066E31B /* upperfloor01_n.dds */; };
-		867DCF29190CAA470066E31B /* wall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF0B190CAA470066E31B /* wall.jpg */; };
-		867DCF2A190CAA470066E31B /* wall1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF0C190CAA470066E31B /* wall1.jpg */; };
-		867DCF2B190CAA470066E31B /* windows_doors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF0D190CAA470066E31B /* windows_doors.jpg */; };
-		867DCF2C190CAA470066E31B /* windows_doors_NRM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF0E190CAA470066E31B /* windows_doors_NRM.jpg */; };
-		867DCF2D190CAA470066E31B /* woodstain01.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF0F190CAA470066E31B /* woodstain01.dds */; };
-		867DCF2E190CAA470066E31B /* woodstain01_n.dds in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF10190CAA470066E31B /* woodstain01_n.dds */; };
-		867DCF31190CAA650066E31B /* House4Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 867DCF30190CAA650066E31B /* House4Object.m */; };
-		867DCF3F190CAFE40066E31B /* arenastonegrey08_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF32190CAFE40066E31B /* arenastonegrey08_n.jpg */; };
-		867DCF40190CAFE40066E31B /* arenastonegrey08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF33190CAFE40066E31B /* arenastonegrey08.jpg */; };
-		867DCF41190CAFE40066E31B /* flatstone01_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF34190CAFE40066E31B /* flatstone01_n.jpg */; };
-		867DCF42190CAFE40066E31B /* flatstone01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF35190CAFE40066E31B /* flatstone01.jpg */; };
-		867DCF43190CAFE40066E31B /* rf1xintstonea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF36190CAFE40066E31B /* rf1xintstonea.jpg */; };
-		867DCF44190CAFE40066E31B /* roof_entrance.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF37190CAFE40066E31B /* roof_entrance.jpg */; };
-		867DCF45190CAFE40066E31B /* stone05_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF38190CAFE40066E31B /* stone05_n.jpg */; };
-		867DCF46190CAFE40066E31B /* stone05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF39190CAFE40066E31B /* stone05.jpg */; };
-		867DCF47190CAFE40066E31B /* trim01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF3A190CAFE40066E31B /* trim01.jpg */; };
-		867DCF48190CAFE40066E31B /* upperfloor01_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF3B190CAFE40066E31B /* upperfloor01_n.jpg */; };
-		867DCF49190CAFE40066E31B /* upperfloor01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF3C190CAFE40066E31B /* upperfloor01.jpg */; };
-		867DCF4A190CAFE40066E31B /* woodstain01_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF3D190CAFE40066E31B /* woodstain01_n.jpg */; };
-		867DCF4B190CAFE40066E31B /* woodstain01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF3E190CAFE40066E31B /* woodstain01.jpg */; };
-		867DCF55190DAECD0066E31B /* pump_star_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF50190DAECD0066E31B /* pump_star_03.png */; };
-		867DCF56190DAECD0066E31B /* snowflake-transparent-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF51190DAECD0066E31B /* snowflake-transparent-1.png */; };
-		867DCF57190DAECD0066E31B /* snowflake-transparent-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF52190DAECD0066E31B /* snowflake-transparent-2.png */; };
-		867DCF58190DAECD0066E31B /* snowflake-transparent-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF53190DAECD0066E31B /* snowflake-transparent-4.png */; };
-		867DCF59190DAECD0066E31B /* snowflake-transparent-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 867DCF54190DAECD0066E31B /* snowflake-transparent-5.png */; };
 		867DCF5C190DCAFE0066E31B /* GlassSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = 867DCF5B190DCAFE0066E31B /* GlassSphere.m */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +56,12 @@
 		8657DE76190E0AD500BB650F /* GlassSphereShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GlassSphereShader.fsh; sourceTree = "<group>"; };
 		8657DE78190E165F00BB650F /* AccumulationShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = AccumulationShader.vsh; sourceTree = "<group>"; };
 		8657DE79190E166900BB650F /* AccumulationShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = AccumulationShader.fsh; sourceTree = "<group>"; };
+		8657DE7B190E636300BB650F /* CylinderObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CylinderObject.h; sourceTree = "<group>"; };
+		8657DE7C190E636300BB650F /* CylinderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CylinderObject.m; sourceTree = "<group>"; };
+		8657DE7E190EBAF600BB650F /* CylinderShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CylinderShader.vsh; sourceTree = "<group>"; };
+		8657DE7F190EBB2800BB650F /* CylinderShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = CylinderShader.fsh; sourceTree = "<group>"; };
+		8657DE84190EE74600BB650F /* CirclePlaneObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CirclePlaneObject.h; sourceTree = "<group>"; };
+		8657DE85190EE74600BB650F /* CirclePlaneObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CirclePlaneObject.m; sourceTree = "<group>"; };
 		866B30F7190BA25B001036AF /* SnowGlobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowGlobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		866B30FA190BA25B001036AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		866B30FC190BA25B001036AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,9 +75,6 @@
 		866B310C190BA25B001036AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		866B3112190BA25B001036AF /* SnowGlobeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowGlobeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		866B3113190BA25B001036AF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		866B311B190BA25B001036AF /* SnowGlobeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnowGlobeTests-Info.plist"; sourceTree = "<group>"; };
-		866B311D190BA25B001036AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		866B311F190BA25B001036AF /* SnowGlobeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowGlobeTests.m; sourceTree = "<group>"; };
 		866B3129190BA2BB001036AF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		866B312A190BA2BB001036AF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		866B3146190BA2BB001036AF /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
@@ -179,68 +87,15 @@
 		866B316F190BA423001036AF /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		866B3173190C5AAA001036AF /* HouseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseObject.h; sourceTree = "<group>"; };
 		866B3174190C5AAA001036AF /* HouseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseObject.m; sourceTree = "<group>"; };
-		867DCE62190C73EF0066E31B /* GroundObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroundObject.h; sourceTree = "<group>"; };
-		867DCE63190C73EF0066E31B /* GroundObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroundObject.m; sourceTree = "<group>"; };
 		867DCE65190C74060066E31B /* SnowParticleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowParticleObject.h; sourceTree = "<group>"; };
 		867DCE66190C74060066E31B /* SnowParticleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowParticleObject.m; sourceTree = "<group>"; };
 		867DCE6B190C7ABD0066E31B /* SnowShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = SnowShader.vsh; sourceTree = "<group>"; };
 		867DCE6C190C7AC70066E31B /* SnowShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = SnowShader.fsh; sourceTree = "<group>"; };
-		867DCE71190CA9480066E31B /* mh03.lwo */ = {isa = PBXFileReference; lastKnownFileType = file; path = mh03.lwo; sourceTree = "<group>"; };
-		867DCE72190CA9480066E31B /* mh03.max */ = {isa = PBXFileReference; lastKnownFileType = file; path = mh03.max; sourceTree = "<group>"; };
-		867DCE73190CA9480066E31B /* mh03.mb */ = {isa = PBXFileReference; lastKnownFileType = file; path = mh03.mb; sourceTree = "<group>"; };
-		867DCE74190CA9480066E31B /* mh03.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mh03.mtl; sourceTree = "<group>"; };
-		867DCE75190CA9480066E31B /* mh03.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mh03.obj; sourceTree = "<group>"; };
-		867DCE76190CA9480066E31B /* mh03MTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mh03MTL.h; sourceTree = "<group>"; };
-		867DCE77190CA9480066E31B /* mh03OBJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mh03OBJ.h; sourceTree = "<group>"; };
-		867DCE79190CA9480066E31B /* _ivy_d.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = _ivy_d.tga; sourceTree = "<group>"; };
-		867DCE7A190CA9480066E31B /* _ivy_o.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = _ivy_o.tga; sourceTree = "<group>"; };
-		867DCE7B190CA9480066E31B /* brudoorupper02.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = brudoorupper02.dds; sourceTree = "<group>"; };
-		867DCE7C190CA9480066E31B /* brudoorupper02_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = brudoorupper02_n.dds; sourceTree = "<group>"; };
-		867DCE7D190CA9480066E31B /* door_big.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = door_big.dds; sourceTree = "<group>"; };
-		867DCE7E190CA9480066E31B /* door_big_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = door_big_n.dds; sourceTree = "<group>"; };
-		867DCE7F190CA9480066E31B /* PlasterWhiteDirty0030_M.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PlasterWhiteDirty0030_M.jpg; sourceTree = "<group>"; };
-		867DCE80190CA9480066E31B /* PlasterWhiteDirty0070_M.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PlasterWhiteDirty0070_M.jpg; sourceTree = "<group>"; };
-		867DCE81190CA9480066E31B /* potted_plants.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = potted_plants.tga; sourceTree = "<group>"; };
-		867DCE82190CA9480066E31B /* prioryroof01.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = prioryroof01.dds; sourceTree = "<group>"; };
-		867DCE83190CA9480066E31B /* prioryroof01_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = prioryroof01_n.dds; sourceTree = "<group>"; };
-		867DCE84190CA9480066E31B /* rf1xintstonea.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf1xintstonea.dds; sourceTree = "<group>"; };
-		867DCE85190CA9480066E31B /* rf1xintstonea_NRM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rf1xintstonea_NRM.jpg; sourceTree = "<group>"; };
-		867DCE86190CA9480066E31B /* roof_slate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roof_slate.jpg; sourceTree = "<group>"; };
-		867DCE87190CA9480066E31B /* roof_slate_bm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roof_slate_bm.jpg; sourceTree = "<group>"; };
-		867DCE88190CA9480066E31B /* roof_slate_bm_NRM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roof_slate_bm_NRM.jpg; sourceTree = "<group>"; };
-		867DCE89190CA9480066E31B /* skstone.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = skstone.dds; sourceTree = "<group>"; };
-		867DCE8A190CA9480066E31B /* skstone_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = skstone_n.dds; sourceTree = "<group>"; };
-		867DCE8B190CA9480066E31B /* Slate-Bump.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Slate-Bump.jpg"; sourceTree = "<group>"; };
-		867DCE8C190CA9480066E31B /* Slate-Bump_NRM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Slate-Bump_NRM.jpg"; sourceTree = "<group>"; };
-		867DCE8D190CA9480066E31B /* Slate-color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Slate-color.jpg"; sourceTree = "<group>"; };
-		867DCE8E190CA9480066E31B /* standard_crates.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = standard_crates.tga; sourceTree = "<group>"; };
-		867DCE8F190CA9480066E31B /* tree_deciduous_01a_trunk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree_deciduous_01a_trunk.jpg; sourceTree = "<group>"; };
-		867DCE90190CA9480066E31B /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
-		867DCE91190CA9480066E31B /* wallplastertanint02.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = wallplastertanint02.dds; sourceTree = "<group>"; };
-		867DCE92190CA9480066E31B /* wallplastertanint02_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = wallplastertanint02_n.dds; sourceTree = "<group>"; };
-		867DCE93190CA9480066E31B /* windows.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = windows.jpg; sourceTree = "<group>"; };
-		867DCE94190CA9480066E31B /* windows_doors1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = windows_doors1.jpg; sourceTree = "<group>"; };
-		867DCE95190CA9480066E31B /* wood.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = wood.dds; sourceTree = "<group>"; };
-		867DCE96190CA9480066E31B /* wood01.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = wood01.dds; sourceTree = "<group>"; };
-		867DCE97190CA9480066E31B /* wood01_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = wood01_n.dds; sourceTree = "<group>"; };
-		867DCE98190CA9480066E31B /* wood_ddn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood_ddn.jpg; sourceTree = "<group>"; };
-		867DCE99190CA9480066E31B /* woodbarrel001.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = woodbarrel001.tga; sourceTree = "<group>"; };
 		867DCE9B190CA9480066E31B /* BordersManor1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BordersManor1.jpg; sourceTree = "<group>"; };
 		867DCE9C190CA9480066E31B /* FloorManor1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FloorManor1.jpg; sourceTree = "<group>"; };
-		867DCE9D190CA9480066E31B /* Manor.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Manor.mtl; sourceTree = "<group>"; };
 		867DCE9E190CA9480066E31B /* Manor.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Manor.obj; sourceTree = "<group>"; };
-		867DCE9F190CA9480066E31B /* ManorGround.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ManorGround.mtl; sourceTree = "<group>"; };
-		867DCEA0190CA9480066E31B /* ManorGround.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ManorGround.obj; sourceTree = "<group>"; };
-		867DCEA1190CA9480066E31B /* ManorGround1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ManorGround1.jpg; sourceTree = "<group>"; };
-		867DCEA2190CA9480066E31B /* ManorGroundMTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManorGroundMTL.h; sourceTree = "<group>"; };
-		867DCEA3190CA9480066E31B /* ManorGroundOBJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManorGroundOBJ.h; sourceTree = "<group>"; };
 		867DCEA4190CA9480066E31B /* ManorMTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManorMTL.h; sourceTree = "<group>"; };
 		867DCEA5190CA9480066E31B /* ManorOBJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManorOBJ.h; sourceTree = "<group>"; };
-		867DCEA6190CA9480066E31B /* ManorSky.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ManorSky.mtl; sourceTree = "<group>"; };
-		867DCEA7190CA9480066E31B /* ManorSky.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ManorSky.obj; sourceTree = "<group>"; };
-		867DCEA8190CA9480066E31B /* ManorSkyMTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManorSkyMTL.h; sourceTree = "<group>"; };
-		867DCEA9190CA9480066E31B /* ManorSkyOBJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManorSkyOBJ.h; sourceTree = "<group>"; };
-		867DCEAA190CA9480066E31B /* mtl2opengl.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = mtl2opengl.pl; sourceTree = "<group>"; };
 		867DCEAB190CA9480066E31B /* PillarsManor1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PillarsManor1.jpg; sourceTree = "<group>"; };
 		867DCEAC190CA9480066E31B /* RoofManor1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RoofManor1.jpg; sourceTree = "<group>"; };
 		867DCEAD190CA9480066E31B /* RustyFence1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RustyFence1.jpg; sourceTree = "<group>"; };
@@ -251,58 +106,6 @@
 		867DCEB2190CA9480066E31B /* WallsManor1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WallsManor1.jpg; sourceTree = "<group>"; };
 		867DCEB3190CA9480066E31B /* WindowsManor1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WindowsManor1.jpg; sourceTree = "<group>"; };
 		867DCEB4190CA9480066E31B /* WindowsManor2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WindowsManor2.jpg; sourceTree = "<group>"; };
-		867DCEF0190CAA470066E31B /* MAXFILES.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MAXFILES.TXT; sourceTree = "<group>"; };
-		867DCEF1190CAA470066E31B /* med_house_final.lwo */ = {isa = PBXFileReference; lastKnownFileType = file; path = med_house_final.lwo; sourceTree = "<group>"; };
-		867DCEF2190CAA470066E31B /* med_house_final.max */ = {isa = PBXFileReference; lastKnownFileType = file; path = med_house_final.max; sourceTree = "<group>"; };
-		867DCEF3190CAA470066E31B /* med_house_final.mb */ = {isa = PBXFileReference; lastKnownFileType = file; path = med_house_final.mb; sourceTree = "<group>"; };
-		867DCEF4190CAA470066E31B /* med_house_final.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = med_house_final.mtl; sourceTree = "<group>"; };
-		867DCEF5190CAA470066E31B /* med_house_final.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = med_house_final.obj; sourceTree = "<group>"; };
-		867DCEF6190CAA470066E31B /* med_house_finalMTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = med_house_finalMTL.h; sourceTree = "<group>"; };
-		867DCEF7190CAA470066E31B /* med_house_finalOBJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = med_house_finalOBJ.h; sourceTree = "<group>"; };
-		867DCEF9190CAA470066E31B /* arenastonegrey08.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = arenastonegrey08.dds; sourceTree = "<group>"; };
-		867DCEFA190CAA470066E31B /* arenastonegrey08_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = arenastonegrey08_n.dds; sourceTree = "<group>"; };
-		867DCEFB190CAA470066E31B /* flatstone01.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = flatstone01.dds; sourceTree = "<group>"; };
-		867DCEFC190CAA470066E31B /* flatstone01_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = flatstone01_n.dds; sourceTree = "<group>"; };
-		867DCEFD190CAA470066E31B /* rf1xintstonea.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf1xintstonea.dds; sourceTree = "<group>"; };
-		867DCEFE190CAA470066E31B /* rf1xintstonea_NRM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rf1xintstonea_NRM.jpg; sourceTree = "<group>"; };
-		867DCEFF190CAA470066E31B /* roof_entrance.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = roof_entrance.dds; sourceTree = "<group>"; };
-		867DCF00190CAA470066E31B /* roof_entrance_ddn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roof_entrance_ddn.jpg; sourceTree = "<group>"; };
-		867DCF01190CAA470066E31B /* roof_slate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roof_slate.jpg; sourceTree = "<group>"; };
-		867DCF02190CAA470066E31B /* roof_slate_bm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roof_slate_bm.jpg; sourceTree = "<group>"; };
-		867DCF03190CAA470066E31B /* roof_slate_bm_NRM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roof_slate_bm_NRM.jpg; sourceTree = "<group>"; };
-		867DCF04190CAA470066E31B /* stone05.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = stone05.dds; sourceTree = "<group>"; };
-		867DCF05190CAA470066E31B /* stone05_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = stone05_n.dds; sourceTree = "<group>"; };
-		867DCF06190CAA470066E31B /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
-		867DCF07190CAA470066E31B /* trim01.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = trim01.dds; sourceTree = "<group>"; };
-		867DCF08190CAA470066E31B /* trim01_NRM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trim01_NRM.jpg; sourceTree = "<group>"; };
-		867DCF09190CAA470066E31B /* upperfloor01.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = upperfloor01.dds; sourceTree = "<group>"; };
-		867DCF0A190CAA470066E31B /* upperfloor01_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = upperfloor01_n.dds; sourceTree = "<group>"; };
-		867DCF0B190CAA470066E31B /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
-		867DCF0C190CAA470066E31B /* wall1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall1.jpg; sourceTree = "<group>"; };
-		867DCF0D190CAA470066E31B /* windows_doors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = windows_doors.jpg; sourceTree = "<group>"; };
-		867DCF0E190CAA470066E31B /* windows_doors_NRM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = windows_doors_NRM.jpg; sourceTree = "<group>"; };
-		867DCF0F190CAA470066E31B /* woodstain01.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = woodstain01.dds; sourceTree = "<group>"; };
-		867DCF10190CAA470066E31B /* woodstain01_n.dds */ = {isa = PBXFileReference; lastKnownFileType = file; path = woodstain01_n.dds; sourceTree = "<group>"; };
-		867DCF2F190CAA650066E31B /* House4Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = House4Object.h; sourceTree = "<group>"; };
-		867DCF30190CAA650066E31B /* House4Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = House4Object.m; sourceTree = "<group>"; };
-		867DCF32190CAFE40066E31B /* arenastonegrey08_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arenastonegrey08_n.jpg; sourceTree = "<group>"; };
-		867DCF33190CAFE40066E31B /* arenastonegrey08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arenastonegrey08.jpg; sourceTree = "<group>"; };
-		867DCF34190CAFE40066E31B /* flatstone01_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flatstone01_n.jpg; sourceTree = "<group>"; };
-		867DCF35190CAFE40066E31B /* flatstone01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flatstone01.jpg; sourceTree = "<group>"; };
-		867DCF36190CAFE40066E31B /* rf1xintstonea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rf1xintstonea.jpg; sourceTree = "<group>"; };
-		867DCF37190CAFE40066E31B /* roof_entrance.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roof_entrance.jpg; sourceTree = "<group>"; };
-		867DCF38190CAFE40066E31B /* stone05_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stone05_n.jpg; sourceTree = "<group>"; };
-		867DCF39190CAFE40066E31B /* stone05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stone05.jpg; sourceTree = "<group>"; };
-		867DCF3A190CAFE40066E31B /* trim01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trim01.jpg; sourceTree = "<group>"; };
-		867DCF3B190CAFE40066E31B /* upperfloor01_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = upperfloor01_n.jpg; sourceTree = "<group>"; };
-		867DCF3C190CAFE40066E31B /* upperfloor01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = upperfloor01.jpg; sourceTree = "<group>"; };
-		867DCF3D190CAFE40066E31B /* woodstain01_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woodstain01_n.jpg; sourceTree = "<group>"; };
-		867DCF3E190CAFE40066E31B /* woodstain01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woodstain01.jpg; sourceTree = "<group>"; };
-		867DCF50190DAECD0066E31B /* pump_star_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pump_star_03.png; sourceTree = "<group>"; };
-		867DCF51190DAECD0066E31B /* snowflake-transparent-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowflake-transparent-1.png"; sourceTree = "<group>"; };
-		867DCF52190DAECD0066E31B /* snowflake-transparent-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowflake-transparent-2.png"; sourceTree = "<group>"; };
-		867DCF53190DAECD0066E31B /* snowflake-transparent-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowflake-transparent-4.png"; sourceTree = "<group>"; };
-		867DCF54190DAECD0066E31B /* snowflake-transparent-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowflake-transparent-5.png"; sourceTree = "<group>"; };
 		867DCF5A190DCAFE0066E31B /* GlassSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlassSphere.h; sourceTree = "<group>"; };
 		867DCF5B190DCAFE0066E31B /* GlassSphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlassSphere.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -335,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				866B3100190BA25B001036AF /* SnowGlobe */,
-				866B3119190BA25B001036AF /* SnowGlobeTests */,
 				866B30F9190BA25B001036AF /* Frameworks */,
 				866B30F8190BA25B001036AF /* Products */,
 			);
@@ -391,30 +193,9 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		866B3119190BA25B001036AF /* SnowGlobeTests */ = {
-			isa = PBXGroup;
-			children = (
-				866B311F190BA25B001036AF /* SnowGlobeTests.m */,
-				866B311A190BA25B001036AF /* Supporting Files */,
-			);
-			path = SnowGlobeTests;
-			sourceTree = "<group>";
-		};
-		866B311A190BA25B001036AF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				866B311B190BA25B001036AF /* SnowGlobeTests-Info.plist */,
-				866B311C190BA25B001036AF /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		866B312B190BA2BB001036AF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				867DCF4F190DAECD0066E31B /* Texture */,
-				867DCEEF190CAA470066E31B /* med_house04 */,
-				867DCE70190CA9480066E31B /* MedievalHouse03 */,
 				867DCE9A190CA9480066E31B /* SpookyManor */,
 			);
 			name = Resource;
@@ -424,14 +205,16 @@
 		866B3170190BA77B001036AF /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				8657DE78190E165F00BB650F /* AccumulationShader.vsh */,
+				8657DE79190E166900BB650F /* AccumulationShader.fsh */,
+				8657DE7E190EBAF600BB650F /* CylinderShader.vsh */,
+				8657DE7F190EBB2800BB650F /* CylinderShader.fsh */,
 				866B3147190BA2BB001036AF /* Shader.vsh */,
 				866B3146190BA2BB001036AF /* Shader.fsh */,
 				867DCE6B190C7ABD0066E31B /* SnowShader.vsh */,
 				867DCE6C190C7AC70066E31B /* SnowShader.fsh */,
 				8657DE74190E0AC600BB650F /* GlassSphereShader.vsh */,
 				8657DE76190E0AD500BB650F /* GlassSphereShader.fsh */,
-				8657DE78190E165F00BB650F /* AccumulationShader.vsh */,
-				8657DE79190E166900BB650F /* AccumulationShader.fsh */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -453,14 +236,14 @@
 			children = (
 				866B3173190C5AAA001036AF /* HouseObject.h */,
 				866B3174190C5AAA001036AF /* HouseObject.m */,
-				867DCE62190C73EF0066E31B /* GroundObject.h */,
-				867DCE63190C73EF0066E31B /* GroundObject.m */,
 				867DCE65190C74060066E31B /* SnowParticleObject.h */,
 				867DCE66190C74060066E31B /* SnowParticleObject.m */,
-				867DCF2F190CAA650066E31B /* House4Object.h */,
-				867DCF30190CAA650066E31B /* House4Object.m */,
 				867DCF5A190DCAFE0066E31B /* GlassSphere.h */,
 				867DCF5B190DCAFE0066E31B /* GlassSphere.m */,
+				8657DE7B190E636300BB650F /* CylinderObject.h */,
+				8657DE7C190E636300BB650F /* CylinderObject.m */,
+				8657DE84190EE74600BB650F /* CirclePlaneObject.h */,
+				8657DE85190EE74600BB650F /* CirclePlaneObject.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -472,81 +255,14 @@
 			name = iPad;
 			sourceTree = "<group>";
 		};
-		867DCE70190CA9480066E31B /* MedievalHouse03 */ = {
-			isa = PBXGroup;
-			children = (
-				867DCE71190CA9480066E31B /* mh03.lwo */,
-				867DCE72190CA9480066E31B /* mh03.max */,
-				867DCE73190CA9480066E31B /* mh03.mb */,
-				867DCE74190CA9480066E31B /* mh03.mtl */,
-				867DCE75190CA9480066E31B /* mh03.obj */,
-				867DCE76190CA9480066E31B /* mh03MTL.h */,
-				867DCE77190CA9480066E31B /* mh03OBJ.h */,
-				867DCE78190CA9480066E31B /* textures */,
-			);
-			name = MedievalHouse03;
-			path = SnowGlobe/MedievalHouse03;
-			sourceTree = SOURCE_ROOT;
-		};
-		867DCE78190CA9480066E31B /* textures */ = {
-			isa = PBXGroup;
-			children = (
-				867DCE79190CA9480066E31B /* _ivy_d.tga */,
-				867DCE7A190CA9480066E31B /* _ivy_o.tga */,
-				867DCE7B190CA9480066E31B /* brudoorupper02.dds */,
-				867DCE7C190CA9480066E31B /* brudoorupper02_n.dds */,
-				867DCE7D190CA9480066E31B /* door_big.dds */,
-				867DCE7E190CA9480066E31B /* door_big_n.dds */,
-				867DCE7F190CA9480066E31B /* PlasterWhiteDirty0030_M.jpg */,
-				867DCE80190CA9480066E31B /* PlasterWhiteDirty0070_M.jpg */,
-				867DCE81190CA9480066E31B /* potted_plants.tga */,
-				867DCE82190CA9480066E31B /* prioryroof01.dds */,
-				867DCE83190CA9480066E31B /* prioryroof01_n.dds */,
-				867DCE84190CA9480066E31B /* rf1xintstonea.dds */,
-				867DCE85190CA9480066E31B /* rf1xintstonea_NRM.jpg */,
-				867DCE86190CA9480066E31B /* roof_slate.jpg */,
-				867DCE87190CA9480066E31B /* roof_slate_bm.jpg */,
-				867DCE88190CA9480066E31B /* roof_slate_bm_NRM.jpg */,
-				867DCE89190CA9480066E31B /* skstone.dds */,
-				867DCE8A190CA9480066E31B /* skstone_n.dds */,
-				867DCE8B190CA9480066E31B /* Slate-Bump.jpg */,
-				867DCE8C190CA9480066E31B /* Slate-Bump_NRM.jpg */,
-				867DCE8D190CA9480066E31B /* Slate-color.jpg */,
-				867DCE8E190CA9480066E31B /* standard_crates.tga */,
-				867DCE8F190CA9480066E31B /* tree_deciduous_01a_trunk.jpg */,
-				867DCE90190CA9480066E31B /* wall.jpg */,
-				867DCE91190CA9480066E31B /* wallplastertanint02.dds */,
-				867DCE92190CA9480066E31B /* wallplastertanint02_n.dds */,
-				867DCE93190CA9480066E31B /* windows.jpg */,
-				867DCE94190CA9480066E31B /* windows_doors1.jpg */,
-				867DCE95190CA9480066E31B /* wood.dds */,
-				867DCE96190CA9480066E31B /* wood01.dds */,
-				867DCE97190CA9480066E31B /* wood01_n.dds */,
-				867DCE98190CA9480066E31B /* wood_ddn.jpg */,
-				867DCE99190CA9480066E31B /* woodbarrel001.tga */,
-			);
-			path = textures;
-			sourceTree = "<group>";
-		};
 		867DCE9A190CA9480066E31B /* SpookyManor */ = {
 			isa = PBXGroup;
 			children = (
 				867DCE9B190CA9480066E31B /* BordersManor1.jpg */,
 				867DCE9C190CA9480066E31B /* FloorManor1.jpg */,
-				867DCE9D190CA9480066E31B /* Manor.mtl */,
 				867DCE9E190CA9480066E31B /* Manor.obj */,
-				867DCE9F190CA9480066E31B /* ManorGround.mtl */,
-				867DCEA0190CA9480066E31B /* ManorGround.obj */,
-				867DCEA1190CA9480066E31B /* ManorGround1.jpg */,
-				867DCEA2190CA9480066E31B /* ManorGroundMTL.h */,
-				867DCEA3190CA9480066E31B /* ManorGroundOBJ.h */,
 				867DCEA4190CA9480066E31B /* ManorMTL.h */,
 				867DCEA5190CA9480066E31B /* ManorOBJ.h */,
-				867DCEA6190CA9480066E31B /* ManorSky.mtl */,
-				867DCEA7190CA9480066E31B /* ManorSky.obj */,
-				867DCEA8190CA9480066E31B /* ManorSkyMTL.h */,
-				867DCEA9190CA9480066E31B /* ManorSkyOBJ.h */,
-				867DCEAA190CA9480066E31B /* mtl2opengl.pl */,
 				867DCEAB190CA9480066E31B /* PillarsManor1.jpg */,
 				867DCEAC190CA9480066E31B /* RoofManor1.jpg */,
 				867DCEAD190CA9480066E31B /* RustyFence1.jpg */,
@@ -560,80 +276,6 @@
 			);
 			name = SpookyManor;
 			sourceTree = "<group>";
-		};
-		867DCEEF190CAA470066E31B /* med_house04 */ = {
-			isa = PBXGroup;
-			children = (
-				867DCEF0190CAA470066E31B /* MAXFILES.TXT */,
-				867DCEF1190CAA470066E31B /* med_house_final.lwo */,
-				867DCEF2190CAA470066E31B /* med_house_final.max */,
-				867DCEF3190CAA470066E31B /* med_house_final.mb */,
-				867DCEF4190CAA470066E31B /* med_house_final.mtl */,
-				867DCEF5190CAA470066E31B /* med_house_final.obj */,
-				867DCEF6190CAA470066E31B /* med_house_finalMTL.h */,
-				867DCEF7190CAA470066E31B /* med_house_finalOBJ.h */,
-				867DCEF8190CAA470066E31B /* texture */,
-			);
-			name = med_house04;
-			path = SnowGlobe/med_house04;
-			sourceTree = SOURCE_ROOT;
-		};
-		867DCEF8190CAA470066E31B /* texture */ = {
-			isa = PBXGroup;
-			children = (
-				867DCF32190CAFE40066E31B /* arenastonegrey08_n.jpg */,
-				867DCF33190CAFE40066E31B /* arenastonegrey08.jpg */,
-				867DCF34190CAFE40066E31B /* flatstone01_n.jpg */,
-				867DCF35190CAFE40066E31B /* flatstone01.jpg */,
-				867DCF36190CAFE40066E31B /* rf1xintstonea.jpg */,
-				867DCF37190CAFE40066E31B /* roof_entrance.jpg */,
-				867DCF38190CAFE40066E31B /* stone05_n.jpg */,
-				867DCF39190CAFE40066E31B /* stone05.jpg */,
-				867DCF3A190CAFE40066E31B /* trim01.jpg */,
-				867DCF3B190CAFE40066E31B /* upperfloor01_n.jpg */,
-				867DCF3C190CAFE40066E31B /* upperfloor01.jpg */,
-				867DCF3D190CAFE40066E31B /* woodstain01_n.jpg */,
-				867DCF3E190CAFE40066E31B /* woodstain01.jpg */,
-				867DCEF9190CAA470066E31B /* arenastonegrey08.dds */,
-				867DCEFA190CAA470066E31B /* arenastonegrey08_n.dds */,
-				867DCEFB190CAA470066E31B /* flatstone01.dds */,
-				867DCEFC190CAA470066E31B /* flatstone01_n.dds */,
-				867DCEFD190CAA470066E31B /* rf1xintstonea.dds */,
-				867DCEFE190CAA470066E31B /* rf1xintstonea_NRM.jpg */,
-				867DCEFF190CAA470066E31B /* roof_entrance.dds */,
-				867DCF00190CAA470066E31B /* roof_entrance_ddn.jpg */,
-				867DCF01190CAA470066E31B /* roof_slate.jpg */,
-				867DCF02190CAA470066E31B /* roof_slate_bm.jpg */,
-				867DCF03190CAA470066E31B /* roof_slate_bm_NRM.jpg */,
-				867DCF04190CAA470066E31B /* stone05.dds */,
-				867DCF05190CAA470066E31B /* stone05_n.dds */,
-				867DCF06190CAA470066E31B /* Thumbs.db */,
-				867DCF07190CAA470066E31B /* trim01.dds */,
-				867DCF08190CAA470066E31B /* trim01_NRM.jpg */,
-				867DCF09190CAA470066E31B /* upperfloor01.dds */,
-				867DCF0A190CAA470066E31B /* upperfloor01_n.dds */,
-				867DCF0B190CAA470066E31B /* wall.jpg */,
-				867DCF0C190CAA470066E31B /* wall1.jpg */,
-				867DCF0D190CAA470066E31B /* windows_doors.jpg */,
-				867DCF0E190CAA470066E31B /* windows_doors_NRM.jpg */,
-				867DCF0F190CAA470066E31B /* woodstain01.dds */,
-				867DCF10190CAA470066E31B /* woodstain01_n.dds */,
-			);
-			path = texture;
-			sourceTree = "<group>";
-		};
-		867DCF4F190DAECD0066E31B /* Texture */ = {
-			isa = PBXGroup;
-			children = (
-				867DCF50190DAECD0066E31B /* pump_star_03.png */,
-				867DCF51190DAECD0066E31B /* snowflake-transparent-1.png */,
-				867DCF52190DAECD0066E31B /* snowflake-transparent-2.png */,
-				867DCF53190DAECD0066E31B /* snowflake-transparent-4.png */,
-				867DCF54190DAECD0066E31B /* snowflake-transparent-5.png */,
-			);
-			name = Texture;
-			path = SnowGlobe/Texture;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -711,114 +353,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				867DCEDE190CA9480066E31B /* Manor.obj in Resources */,
-				867DCF40190CAFE40066E31B /* arenastonegrey08.jpg in Resources */,
-				867DCF19190CAA470066E31B /* flatstone01.dds in Resources */,
-				867DCF55190DAECD0066E31B /* pump_star_03.png in Resources */,
-				867DCF2E190CAA470066E31B /* woodstain01_n.dds in Resources */,
-				867DCEC5190CA9480066E31B /* rf1xintstonea.dds in Resources */,
-				867DCEBA190CA9480066E31B /* _ivy_d.tga in Resources */,
-				867DCF1E190CAA470066E31B /* roof_entrance_ddn.jpg in Resources */,
-				867DCECB190CA9480066E31B /* skstone_n.dds in Resources */,
-				867DCF43190CAFE40066E31B /* rf1xintstonea.jpg in Resources */,
-				867DCECA190CA9480066E31B /* skstone.dds in Resources */,
-				867DCEB8190CA9480066E31B /* mh03.mtl in Resources */,
-				867DCED8190CA9480066E31B /* wood01_n.dds in Resources */,
-				867DCF1B190CAA470066E31B /* rf1xintstonea.dds in Resources */,
-				867DCEC7190CA9480066E31B /* roof_slate.jpg in Resources */,
-				867DCEB9190CA9480066E31B /* mh03.obj in Resources */,
-				867DCF48190CAFE40066E31B /* upperfloor01_n.jpg in Resources */,
 				867DCEE9190CA9480066E31B /* Snowz001.jpg in Resources */,
-				867DCF58190DAECD0066E31B /* snowflake-transparent-4.png in Resources */,
 				867DCEEE190CA9480066E31B /* WindowsManor2.jpg in Resources */,
-				867DCF13190CAA470066E31B /* med_house_final.max in Resources */,
-				867DCF20190CAA470066E31B /* roof_slate_bm.jpg in Resources */,
-				867DCF27190CAA470066E31B /* upperfloor01.dds in Resources */,
-				867DCF2B190CAA470066E31B /* windows_doors.jpg in Resources */,
 				867DCEE8190CA9480066E31B /* Snow0AE1.jpg in Resources */,
-				867DCF57190DAECD0066E31B /* snowflake-transparent-2.png in Resources */,
-				867DCED6190CA9480066E31B /* wood.dds in Resources */,
-				867DCEC1190CA9480066E31B /* PlasterWhiteDirty0070_M.jpg in Resources */,
-				867DCEC0190CA9480066E31B /* PlasterWhiteDirty0030_M.jpg in Resources */,
-				867DCF1C190CAA470066E31B /* rf1xintstonea_NRM.jpg in Resources */,
-				867DCECE190CA9480066E31B /* Slate-color.jpg in Resources */,
-				867DCEBD190CA9480066E31B /* brudoorupper02_n.dds in Resources */,
-				867DCEDD190CA9480066E31B /* Manor.mtl in Resources */,
-				867DCF2A190CAA470066E31B /* wall1.jpg in Resources */,
 				867DCEED190CA9480066E31B /* WindowsManor1.jpg in Resources */,
-				867DCF45190CAFE40066E31B /* stone05_n.jpg in Resources */,
-				867DCF11190CAA470066E31B /* MAXFILES.TXT in Resources */,
-				867DCF42190CAFE40066E31B /* flatstone01.jpg in Resources */,
 				866B3105190BA25B001036AF /* InfoPlist.strings in Resources */,
 				867DCEEA190CA9480066E31B /* Stone1.jpg in Resources */,
-				867DCF4B190CAFE40066E31B /* woodstain01.jpg in Resources */,
-				867DCEBC190CA9480066E31B /* brudoorupper02.dds in Resources */,
-				867DCF4A190CAFE40066E31B /* woodstain01_n.jpg in Resources */,
-				867DCED1190CA9480066E31B /* wall.jpg in Resources */,
-				867DCED3190CA9480066E31B /* wallplastertanint02_n.dds in Resources */,
-				867DCEC6190CA9480066E31B /* rf1xintstonea_NRM.jpg in Resources */,
-				867DCF14190CAA470066E31B /* med_house_final.mb in Resources */,
-				867DCED9190CA9480066E31B /* wood_ddn.jpg in Resources */,
-				867DCEDF190CA9480066E31B /* ManorGround.mtl in Resources */,
-				867DCED4190CA9480066E31B /* windows.jpg in Resources */,
-				867DCEE4190CA9480066E31B /* mtl2opengl.pl in Resources */,
 				867DCEEC190CA9480066E31B /* WallsManor1.jpg in Resources */,
-				867DCF24190CAA470066E31B /* Thumbs.db in Resources */,
-				867DCECF190CA9480066E31B /* standard_crates.tga in Resources */,
-				867DCED5190CA9480066E31B /* windows_doors1.jpg in Resources */,
-				867DCEC4190CA9480066E31B /* prioryroof01_n.dds in Resources */,
-				867DCEC3190CA9480066E31B /* prioryroof01.dds in Resources */,
-				867DCEC9190CA9480066E31B /* roof_slate_bm_NRM.jpg in Resources */,
-				867DCF59190DAECD0066E31B /* snowflake-transparent-5.png in Resources */,
-				867DCEBB190CA9480066E31B /* _ivy_o.tga in Resources */,
-				867DCF2D190CAA470066E31B /* woodstain01.dds in Resources */,
 				866B316E190BA30A001036AF /* MainStoryboard.storyboard in Resources */,
-				867DCEDA190CA9480066E31B /* woodbarrel001.tga in Resources */,
 				867DCEDC190CA9480066E31B /* FloorManor1.jpg in Resources */,
-				867DCF1A190CAA470066E31B /* flatstone01_n.dds in Resources */,
-				867DCF22190CAA470066E31B /* stone05.dds in Resources */,
-				867DCECD190CA9480066E31B /* Slate-Bump_NRM.jpg in Resources */,
-				867DCF25190CAA470066E31B /* trim01.dds in Resources */,
-				867DCEBF190CA9480066E31B /* door_big_n.dds in Resources */,
-				867DCEE2190CA9480066E31B /* ManorSky.mtl in Resources */,
-				867DCF46190CAFE40066E31B /* stone05.jpg in Resources */,
-				867DCEC2190CA9480066E31B /* potted_plants.tga in Resources */,
-				867DCED7190CA9480066E31B /* wood01.dds in Resources */,
 				867DCEE5190CA9480066E31B /* PillarsManor1.jpg in Resources */,
-				867DCF18190CAA470066E31B /* arenastonegrey08_n.dds in Resources */,
-				867DCF49190CAFE40066E31B /* upperfloor01.jpg in Resources */,
 				866B310D190BA25B001036AF /* Images.xcassets in Resources */,
-				867DCECC190CA9480066E31B /* Slate-Bump.jpg in Resources */,
 				867DCEEB190CA9480066E31B /* Tree1.jpg in Resources */,
-				867DCF56190DAECD0066E31B /* snowflake-transparent-1.png in Resources */,
-				867DCF44190CAFE40066E31B /* roof_entrance.jpg in Resources */,
-				867DCF12190CAA470066E31B /* med_house_final.lwo in Resources */,
-				867DCF21190CAA470066E31B /* roof_slate_bm_NRM.jpg in Resources */,
-				867DCEB7190CA9480066E31B /* mh03.mb in Resources */,
-				867DCF47190CAFE40066E31B /* trim01.jpg in Resources */,
-				867DCEB5190CA9480066E31B /* mh03.lwo in Resources */,
-				867DCEE0190CA9480066E31B /* ManorGround.obj in Resources */,
-				867DCED2190CA9480066E31B /* wallplastertanint02.dds in Resources */,
-				867DCF1F190CAA470066E31B /* roof_slate.jpg in Resources */,
-				867DCED0190CA9480066E31B /* tree_deciduous_01a_trunk.jpg in Resources */,
-				867DCF29190CAA470066E31B /* wall.jpg in Resources */,
 				867DCEE7190CA9480066E31B /* RustyFence1.jpg in Resources */,
-				867DCF23190CAA470066E31B /* stone05_n.dds in Resources */,
-				867DCF26190CAA470066E31B /* trim01_NRM.jpg in Resources */,
-				867DCF16190CAA470066E31B /* med_house_final.obj in Resources */,
-				867DCEE3190CA9480066E31B /* ManorSky.obj in Resources */,
-				867DCF3F190CAFE40066E31B /* arenastonegrey08_n.jpg in Resources */,
-				867DCEB6190CA9480066E31B /* mh03.max in Resources */,
-				867DCEC8190CA9480066E31B /* roof_slate_bm.jpg in Resources */,
-				867DCF2C190CAA470066E31B /* windows_doors_NRM.jpg in Resources */,
-				867DCF17190CAA470066E31B /* arenastonegrey08.dds in Resources */,
-				867DCEBE190CA9480066E31B /* door_big.dds in Resources */,
-				867DCF15190CAA470066E31B /* med_house_final.mtl in Resources */,
-				867DCEE1190CA9480066E31B /* ManorGround1.jpg in Resources */,
 				867DCEDB190CA9480066E31B /* BordersManor1.jpg in Resources */,
-				867DCF28190CAA470066E31B /* upperfloor01_n.dds in Resources */,
 				867DCEE6190CA9480066E31B /* RoofManor1.jpg in Resources */,
-				867DCF41190CAFE40066E31B /* flatstone01_n.jpg in Resources */,
-				867DCF1D190CAA470066E31B /* roof_entrance.dds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,7 +375,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				866B311E190BA25B001036AF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,11 +388,11 @@
 				866B3164190BA2BB001036AF /* Transformations.m in Sources */,
 				867DCF5C190DCAFE0066E31B /* GlassSphere.m in Sources */,
 				867DCE67190C74060066E31B /* SnowParticleObject.m in Sources */,
-				867DCE64190C73EF0066E31B /* GroundObject.m in Sources */,
-				867DCF31190CAA650066E31B /* House4Object.m in Sources */,
+				8657DE86190EE74600BB650F /* CirclePlaneObject.m in Sources */,
 				866B314C190BA2BB001036AF /* ViewController.m in Sources */,
 				866B310B190BA25B001036AF /* AppDelegate.m in Sources */,
 				866B3175190C5AAA001036AF /* HouseObject.m in Sources */,
+				8657DE7D190E636300BB650F /* CylinderObject.m in Sources */,
 				866B3107190BA25B001036AF /* main.m in Sources */,
 				866B3163190BA2BB001036AF /* ShaderProcessor.m in Sources */,
 			);
@@ -854,7 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				866B3120190BA25B001036AF /* SnowGlobeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,14 +420,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				866B3104190BA25B001036AF /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		866B311C190BA25B001036AF /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				866B311D190BA25B001036AF /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

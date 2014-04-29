@@ -10,8 +10,8 @@
 #import <GLKit/GLKit.h>
 
 #import "Utility.h"
-#define NUM_MTL 8
-
+//#define NUM_MTL 8
+#define NUM_MTL 11
 // Shaders
 #import "ShaderProcessor.h"
 
@@ -28,17 +28,26 @@
     
     GLKVector3      _coord;
     GLfloat         _scale;
+    float           _stoptime;
+    float           _deltaY;
 }
 
 @property (strong, nonatomic) ShaderProcessor* shaderProcessor;
 
-- (id) loadObject;
+- (id) loadObject: (float) stoptime DeltaSnow :(float)dY;
 
-- (void) loadTexture:(NSString *)fileName Index : (int)index;
+- (GLuint) loadTexture:(NSString *)fileName;
 
 - (void) displayWith : (GLKMatrix4) projectionMatrix
-            MVMatrix :(GLKMatrix4) modelViewMatrix
-             NMatrix :(GLKMatrix3) normalMatrix;
+            MVMatrix : (GLKMatrix4) modelViewMatrix
+             NMatrix : (GLKMatrix3) normalMatrix
+              Ambient: (GLKVector3) ambient
+             Diffuse : (GLKVector3) diffuse
+             Specular: (GLKVector3) specular
+               EyeDir: (GLKVector3) eyedir
+            Exponent : (float) exponent
+          CurrentTime: (float) time;
+
 
 - (void) setCoord : (GLKVector3) newcoord;
 - (void) setScale : (GLfloat) scale;

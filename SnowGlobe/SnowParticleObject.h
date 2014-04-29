@@ -32,6 +32,7 @@ typedef struct Emitter
     float       eVelocity;
     float       eDecay;
     float       eSize;
+    float       eStopPlaneY;
     GLKVector3  eColor;
 }
 Emitter;
@@ -47,10 +48,10 @@ Emitter;
     // Instance variables
     GLKVector3  _gravity;
     float       _life;
-    float       _time;
     GLuint      _particleBuffer;
+    float       _stoptime;
     
-    GLuint  _texture;
+    GLuint          _texture;
     
     GLKVector3      _coord;
     GLfloat         _scale;
@@ -59,12 +60,12 @@ Emitter;
 @property (strong, nonatomic) ShaderProcessor* shaderProcessor;
 @property (assign) Emitter emitter;
 
-- (id)initWithTexture:(NSString *)fileName;
+- (id)initWithTexture:(NSString *)fileName StopTime: (float) stoptime;
 - (void)loadTexture:(NSString *)fileName;
 - (void) loadShader;
 - (GLKVector3) generateStartPosition;
-- (void)renderWithProjection:(GLKMatrix4)projectionMatrix MVMatrix :(GLKMatrix4) modelViewMatrix;
-- (void)updateLifeCycle:(float)timeElapsed;
+- (void)renderWithProjection:(GLKMatrix4)projectionMatrix
+                   MVMatrix :(GLKMatrix4) modelViewMatrix CurrentTime: (float) time;
 - (void)loadParticleSystem;
 
 - (void) setCoord : (GLKVector3) newcoord;

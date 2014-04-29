@@ -3,6 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--GLKit View Controller-->
@@ -16,12 +17,28 @@
                     <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bMa-TE-4g7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Double Tab with 2 fingers to make it Snow!" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbf-rr-vVa">
+                                <rect key="frame" x="28" y="102" width="328" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nbf-rr-vVa" secondAttribute="height" multiplier="328:21" id="cXE-0z-Jg5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="nbf-rr-vVa" firstAttribute="leading" secondItem="bMa-TE-4g7" secondAttribute="leading" constant="50" id="hn6-0e-iAE"/>
+                        </constraints>
                         <connections>
                             <outlet property="delegate" destination="f7W-BS-kgy" id="CQm-Yk-aPS"/>
                             <outletCollection property="gestureRecognizers" destination="Owb-C2-hcR" appends="YES" id="1XJ-q6-hDL"/>
                             <outletCollection property="gestureRecognizers" destination="PhN-s9-teO" appends="YES" id="JnD-Gu-YJ0"/>
                             <outletCollection property="gestureRecognizers" destination="Xe7-8f-SEo" appends="YES" id="4DG-UH-VdX"/>
+                            <outletCollection property="gestureRecognizers" destination="Lkq-6m-1hs" appends="YES" id="XVR-cY-KUZ"/>
                         </connections>
                     </glkView>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -42,6 +59,11 @@
                         <action selector="rotation:" destination="f7W-BS-kgy" id="0ij-p8-my3"/>
                     </connections>
                 </rotationGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="Lkq-6m-1hs">
+                    <connections>
+                        <action selector="tap:" destination="f7W-BS-kgy" id="gso-DZ-XYX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="345" y="197"/>
         </scene>

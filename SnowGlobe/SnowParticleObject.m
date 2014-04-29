@@ -14,14 +14,14 @@
 
 @implementation SnowParticleObject
 
--(id) initWithTexture:(NSString *)fileName
+-(id) initWithTexture:(NSString *)fileName StopTime: (float) stoptime
 {
     if(self = [super init])
     {
         // Initialize variables
         _gravity = GLKVector3Make(0.0f, 0.0f, 0.0f);
         _life = 0.0f;
-        _time = 0.0f;
+        _stoptime = stoptime;
         _particleBuffer = 0;
         _scale = 1.0f;
         _coord = GLKVector3Make(0.0f, 0.0f, 0.0f);
@@ -55,24 +55,22 @@
     _uniforms.u_ModelViewMatrix = glGetUniformLocation(_program, "u_ModelViewMatrix");
     _uniforms.u_Gravity = glGetUniformLocation(_program, "u_Gravity");
     _uniforms.u_Time = glGetUniformLocation(_program, "u_Time");
-    _uniforms.u_eVelocity = glGetUniformLocation(_program, "u_eVelocity");
+    _uniforms.u_StopTime = glGetUniformLocation(_program, "u_StopTime");
     _uniforms.u_eDecay = glGetUniformLocation(_program, "u_eDecay");
     _uniforms.u_eSize = glGetUniformLocation(_program, "u_eSize");
     _uniforms.u_eColor = glGetUniformLocation(_program, "u_eColor");
     _uniforms.u_Texture = glGetUniformLocation(_program, "u_Texture");
+    _uniforms.u_eStopPlaneY = glGetUniformLocation(_program, "u_eStopPlaneY");
     glUseProgram(0);
 }
 
 - (void)loadParticleSystem
 {
-    _scale = 1.0f;
-    _coord = GLKVector3Make(0.0f, 0.0f, 0.0f);
-    
     Emitter newEmitter = {0.0f};
     
     // Offset bounds
     float oVelocity = 0.50f;    // Speed
-    float oDecay = 0.75f;       // Time
+    float oDecay = 2.0f;       // Time
     float oSize = 2.00f;        // Pixels
     float oColor = 0.00f;       // 0.5 = 50% shade offset
     float oTime = 5.00f;
@@ -94,9 +92,9 @@
     }
     
     // Load Properties
-    newEmitter.eVelocity = 3.00f;                               // Explosion velocity
-    newEmitter.eDecay = 4.00f;                                  // Explosion decay
+    newEmitter.eDecay = 16.00f;                                  // Explosion decay
     newEmitter.eSize = 8.00f;                                 // Fragment size
+    newEmitter.eStopPlaneY = -0.3f;                             // 
     newEmitter.eColor = GLKVector3Make(1.00f, 1.00f, 1.00f);    // Fragment color
     
     // Set global factors
@@ -115,13 +113,8 @@
     
 }
 
-- (void)updateLifeCycle:(float)timeElapsed
-{
-    _time += timeElapsed;
-    
-}
 
-- (void)renderWithProjection:(GLKMatrix4)projectionMatrix MVMatrix :(GLKMatrix4) modelViewMatrix
+- (void)renderWithProjection:(GLKMatrix4)projectionMatrix MVMatrix :(GLKMatrix4) modelViewMatrix CurrentTime: (float) time
 {
     // transform
     GLKMatrix4 mvMatrix = GLKMatrix4TranslateWithVector3(modelViewMatrix, _coord);
@@ -139,12 +132,13 @@
     glUniformMatrix4fv(_uniforms.u_ProjectionMatrix, 1, 0, projectionMatrix.m);
     glUniformMatrix4fv(_uniforms.u_ModelViewMatrix, 1, 0, mvMatrix.m);
     glUniform3f(_uniforms.u_Gravity, _gravity.x, _gravity.y, _gravity.z);
-    glUniform1f(_uniforms.u_Time, _time);
-    glUniform1f(_uniforms.u_eVelocity, self.emitter.eVelocity);
+    glUniform1f(_uniforms.u_Time, time);
+    glUniform1f(_uniforms.u_StopTime, _stoptime);
     glUniform1f(_uniforms.u_eDecay, self.emitter.eDecay);
     glUniform1f(_uniforms.u_eSize, self.emitter.eSize);
     glUniform3f(_uniforms.u_eColor, self.emitter.eColor.r, self.emitter.eColor.g, self.emitter.eColor.b);
     glUniform1i(_uniforms.u_Texture, 0);
+    glUniform1f(_uniforms.u_eStopPlaneY, self.emitter.eStopPlaneY);
     
     // Attributes
     glEnableVertexAttribArray(_attributes.a_pStartPosition);
@@ -187,15 +181,21 @@
 
 - (GLKVector3) generateStartPosition
 {
+    // generate uniform distribution within a sphere volumn
+    // reference: http://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform
+    // and http://math.stackexchange.com/questions/87230/picking-random-points-in-the-volume-of-sphere-with-uniform-probability
+    
     double radius = 1.0f;
-    float r = [self randomFloatBetween:0.0f and:radius];
-    double theta = (double)[self randomFloatBetween:0 and: 2 * M_PI];
-    double phi = (double)[self randomFloatBetween:0 and: 0.8 * M_PI];
-    
-    float x = r * (float)cos(theta) * (float)sin(phi);
-    float y = r * (float)cos(phi);
-    float z = r * (float)sin(theta) * (float)sin(phi);
-    
+    float U = [self randomFloatBetween:0.0f and:radius];
+    U = powf(U, (1.0/3.0));
+    float x0 = [self randomFloatBetween:-radius and:radius];
+    float y0 = [self randomFloatBetween:0.0f and:radius];
+    float z0 = [self randomFloatBetween:-radius and:radius];
+    float sqrt_xyz = sqrtf(x0*x0 + y0*y0 + z0*z0);
+    float x = x0 * U/sqrt_xyz;
+    float y = y0 * U/sqrt_xyz;
+    float z = z0 * U/sqrt_xyz;
+
     return GLKVector3Make(x, y, z);
 }
 

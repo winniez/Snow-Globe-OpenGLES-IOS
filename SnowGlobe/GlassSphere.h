@@ -14,14 +14,13 @@
 // Shaders
 #import "ShaderProcessor.h"
 
-
 @interface GlassSphere : NSObject
 {
     // Render
     GLuint  _program;
     
-    struct AttributeHandles _attributes;
-    struct UniformHandles   _uniforms;
+    struct GlassSphereAttributeHandles _attributes;
+    struct GlassSphereUniformHandles   _uniforms;
     
     GLuint  _texture;
     NSArray *textureFiles;
@@ -33,15 +32,23 @@
     float*      _vertices;
     float*      _normals;
     float*      _texcoords;
-    
+    int         _num;
 }
+
+@property (strong, nonatomic) ShaderProcessor* shaderProcessor;
+
 - (id) loadObject;
 - (void) loadShader;
 - (void) loadTexture:(NSString *)fileName Index : (int)index;
 
 - (void) displayWith : (GLKMatrix4) projectionMatrix
             MVMatrix :(GLKMatrix4) modelViewMatrix
-             NMatrix :(GLKMatrix3) normalMatrix;
+             NMatrix :(GLKMatrix3) normalMatrix
+              Ambient: (GLKVector3) ambient
+             Diffuse : (GLKVector3) diffuse
+             Specular: (GLKVector3) specular
+               EyeDir: (GLKVector3) eyedir
+            Exponent : (float) exponent;
 
 - (void) sphereData;
 - (void) setCoord : (GLKVector3) newcoord;

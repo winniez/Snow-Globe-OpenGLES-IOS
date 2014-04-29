@@ -4,6 +4,9 @@
 // Created with mtl2opengl.pl
 
 /*
+ Center: <0.237195549077281, 0.400847919557353, 0.273592742337551>
+ Scale by: 0.458047435392409
+ 
 source files: ./Manor.obj, ./Manor.mtl
 materials: 8
 
