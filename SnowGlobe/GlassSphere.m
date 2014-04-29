@@ -108,6 +108,11 @@
 - (void) displayWith : (GLKMatrix4) projectionMatrix
             MVMatrix :(GLKMatrix4) modelViewMatrix
              NMatrix :(GLKMatrix3) normalMatrix
+              Ambient: (GLKVector3) ambient
+             Diffuse : (GLKVector3) diffuse
+             Specular: (GLKVector3) specular
+               EyeDir: (GLKVector3) eyedir
+            Exponent : (float) exponent
 {
     // transform
     GLKMatrix4 mvMatrix = GLKMatrix4TranslateWithVector3(modelViewMatrix, _coord);
@@ -123,6 +128,12 @@
     glUniformMatrix4fv(_uniforms.uModelViewMatrix, 1, 0, mvMatrix.m);
     glUniformMatrix3fv(_uniforms.uNormalMatrix, 1, 0, norMatrix.m);
     
+    glUniform3f(_uniforms.uAmbient, ambient.x, ambient.y, ambient.z);
+    glUniform3f(_uniforms.uDiffuse, diffuse.x, diffuse.y, diffuse.z);
+    glUniform3f(_uniforms.uSpecular, specular.x, specular.y, specular.z);
+    glUniform3f(_uniforms.uEyeDir, eyedir.x, eyedir.y, eyedir.z);
+    glUniform1f(_uniforms.uExponent, exponent);
+    
     // Enable Attributes
     glEnableVertexAttribArray(_attributes.aVertex);
     glEnableVertexAttribArray(_attributes.aNormal);
@@ -131,11 +142,12 @@
     glVertexAttribPointer(_attributes.aNormal, 3, GL_FLOAT, GL_FALSE, 0, _normals);
     glVertexAttribPointer(_attributes.aTexture, 2,  GL_FLOAT, GL_FALSE, 0, _texcoords);
     glEnable (GL_BLEND);
-    
+    //glDisable (GL_DEPTH_TEST);
     glBlendFunc (GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
     glDepthMask(0);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, _num);
     glDisable(GL_BLEND);
+    //glEnable(GL_DEPTH_TEST);
      glDepthMask(1);
     // Disable Attributes
     glDisableVertexAttribArray(_attributes.aVertex);

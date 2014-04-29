@@ -14,14 +14,14 @@
 
 @implementation SnowParticleObject
 
--(id) initWithTexture:(NSString *)fileName
+-(id) initWithTexture:(NSString *)fileName StopTime: (float) stoptime
 {
     if(self = [super init])
     {
         // Initialize variables
         _gravity = GLKVector3Make(0.0f, 0.0f, 0.0f);
         _life = 0.0f;
-        _time = 0.0f;
+        _stoptime = stoptime;
         _particleBuffer = 0;
         _scale = 1.0f;
         _coord = GLKVector3Make(0.0f, 0.0f, 0.0f);
@@ -55,19 +55,17 @@
     _uniforms.u_ModelViewMatrix = glGetUniformLocation(_program, "u_ModelViewMatrix");
     _uniforms.u_Gravity = glGetUniformLocation(_program, "u_Gravity");
     _uniforms.u_Time = glGetUniformLocation(_program, "u_Time");
-    _uniforms.u_eVelocity = glGetUniformLocation(_program, "u_eVelocity");
+    _uniforms.u_StopTime = glGetUniformLocation(_program, "u_StopTime");
     _uniforms.u_eDecay = glGetUniformLocation(_program, "u_eDecay");
     _uniforms.u_eSize = glGetUniformLocation(_program, "u_eSize");
     _uniforms.u_eColor = glGetUniformLocation(_program, "u_eColor");
     _uniforms.u_Texture = glGetUniformLocation(_program, "u_Texture");
+    _uniforms.u_eStopPlaneY = glGetUniformLocation(_program, "u_eStopPlaneY");
     glUseProgram(0);
 }
 
 - (void)loadParticleSystem
 {
-    _scale = 1.0f;
-    _coord = GLKVector3Make(0.0f, 0.0f, 0.0f);
-    
     Emitter newEmitter = {0.0f};
     
     // Offset bounds
@@ -94,9 +92,9 @@
     }
     
     // Load Properties
-    newEmitter.eVelocity = 3.00f;                               // Explosion velocity
-    newEmitter.eDecay = 8.00f;                                  // Explosion decay
+    newEmitter.eDecay = 16.00f;                                  // Explosion decay
     newEmitter.eSize = 8.00f;                                 // Fragment size
+    newEmitter.eStopPlaneY = -0.3f;                             // 
     newEmitter.eColor = GLKVector3Make(1.00f, 1.00f, 1.00f);    // Fragment color
     
     // Set global factors
@@ -115,13 +113,8 @@
     
 }
 
-- (void)updateLifeCycle:(float)timeElapsed
-{
-    _time += timeElapsed;
-    
-}
 
-- (void)renderWithProjection:(GLKMatrix4)projectionMatrix MVMatrix :(GLKMatrix4) modelViewMatrix
+- (void)renderWithProjection:(GLKMatrix4)projectionMatrix MVMatrix :(GLKMatrix4) modelViewMatrix CurrentTime: (float) time
 {
     // transform
     GLKMatrix4 mvMatrix = GLKMatrix4TranslateWithVector3(modelViewMatrix, _coord);
@@ -139,12 +132,13 @@
     glUniformMatrix4fv(_uniforms.u_ProjectionMatrix, 1, 0, projectionMatrix.m);
     glUniformMatrix4fv(_uniforms.u_ModelViewMatrix, 1, 0, mvMatrix.m);
     glUniform3f(_uniforms.u_Gravity, _gravity.x, _gravity.y, _gravity.z);
-    glUniform1f(_uniforms.u_Time, _time);
-    glUniform1f(_uniforms.u_eVelocity, self.emitter.eVelocity);
+    glUniform1f(_uniforms.u_Time, time);
+    glUniform1f(_uniforms.u_StopTime, _stoptime);
     glUniform1f(_uniforms.u_eDecay, self.emitter.eDecay);
     glUniform1f(_uniforms.u_eSize, self.emitter.eSize);
     glUniform3f(_uniforms.u_eColor, self.emitter.eColor.r, self.emitter.eColor.g, self.emitter.eColor.b);
     glUniform1i(_uniforms.u_Texture, 0);
+    glUniform1f(_uniforms.u_eStopPlaneY, self.emitter.eStopPlaneY);
     
     // Attributes
     glEnableVertexAttribArray(_attributes.a_pStartPosition);

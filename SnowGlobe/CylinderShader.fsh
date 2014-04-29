@@ -44,14 +44,14 @@ static const char* CylinderShaderF = STRINGIFY
     
     highp float df = max(0.0, dot(N, L));
     highp float sf = max(0.0, dot(N, H));
-    
-    return (materialDefault(df, sf) * vec3(texture2D(uTexture, vTexture)));
+    return (materialDefault(df, sf) * uColor);
+    //return (materialDefault(df, sf) * vec3(texture2D(uTexture, vTexture)));
 }
  
  void main(void)
 {
-    //lowp vec3 color = modelColor();
-    lowp vec3 color = vec3(1.0, 1.0, 1.0);
+    lowp vec3 color = modelColor();
+    //lowp vec3 color = vec3(1.0, 1.0, 1.0);
     gl_FragColor = vec4(color, 1.0);
 }
  

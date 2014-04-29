@@ -15,10 +15,12 @@
 #include "Shader.fsh"
 
 @implementation GroundObject
--(id) loadObject
+-(id) loadObject : (float) stoptime DeltaSnow :(float)dY
 {
     _scale = 1.0f;
     _coord = GLKVector3Make(0.0f, 0.0f, 0.0f);
+    _stoptime = stoptime;
+    _deltaY = dY;
     
     // Initialize Class Objects
     self.shaderProcessor = [[ShaderProcessor alloc] init];
@@ -51,6 +53,10 @@
     _uniforms.uSpecular = glGetUniformLocation(_program, "uSpecular");
     _uniforms.uExponent = glGetUniformLocation(_program, "uExponent");
     _uniforms.uTexture = glGetUniformLocation(_program, "uTexture");
+    _uniforms.uTime = glGetUniformLocation(_program, "uTime");
+    _uniforms.uStopTime = glGetUniformLocation(_program, "uStopTime");
+    _uniforms.uMode = glGetUniformLocation(_program, "uMode");
+    _uniforms.uDeltaY = glGetUniformLocation(_program, "uDeltaY");
     glUseProgram(0);
     /*
      NSLog(@"num of vertices %d",  (int)(sizeof(ManorGroundOBJVerts)/sizeof(float)/3));
@@ -61,8 +67,14 @@
 }
 
 - (void) displayWith : (GLKMatrix4) projectionMatrix
-            MVMatrix :(GLKMatrix4) modelViewMatrix
-             NMatrix :(GLKMatrix3) normalMatrix
+            MVMatrix : (GLKMatrix4) modelViewMatrix
+             NMatrix : (GLKMatrix3) normalMatrix
+              Ambient: (GLKVector3) ambient
+             Diffuse : (GLKVector3) diffuse
+             Specular: (GLKVector3) specular
+               EyeDir: (GLKVector3) eyedir
+            Exponent : (float) exponent
+          CurrentTime: (float) time
 {
     // transform
     GLKMatrix4 mvMatrix = GLKMatrix4TranslateWithVector3(modelViewMatrix, _coord);
@@ -78,6 +90,12 @@
     glUniformMatrix4fv(_uniforms.uProjectionMatrix, 1, 0, projectionMatrix.m);
     glUniformMatrix4fv(_uniforms.uModelViewMatrix, 1, 0, mvMatrix.m);
     glUniformMatrix3fv(_uniforms.uNormalMatrix, 1, 0, norMatrix.m);
+    
+    glUniform3f(_uniforms.uAmbient, ambient.x, ambient.y, ambient.z);
+    glUniform3f(_uniforms.uDiffuse, diffuse.x, diffuse.y, diffuse.z);
+    glUniform3f(_uniforms.uSpecular, specular.x, specular.y, specular.z);
+    glUniform3f(_uniforms.uEyeDir, eyedir.x, eyedir.y, eyedir.z);
+    glUniform1f(_uniforms.uExponent, exponent);
     
     // Enable Attributes
     glEnableVertexAttribArray(_attributes.aVertex);
@@ -95,11 +113,12 @@
         glTexEnvi(GL_TEXTURE_ENV,GL_TEXTURE_ENV_MODE,GL_BLEND);
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, _textures[i]);
-        
+        /*
         glUniform3f(_uniforms.uAmbient, ManorGroundMTLAmbient[i][0], ManorGroundMTLAmbient[i][1], ManorGroundMTLAmbient[i][2]);
         glUniform3f(_uniforms.uDiffuse, ManorGroundMTLDiffuse[i][0], ManorGroundMTLDiffuse[i][1], ManorGroundMTLDiffuse[i][2]);
         glUniform3f(_uniforms.uSpecular, ManorGroundMTLSpecular[i][0], ManorGroundMTLSpecular[i][1], ManorGroundMTLSpecular[i][2]);
         glUniform1f(_uniforms.uExponent, ManorGroundMTLExponent[i]);
+         */
         // Attach Texture
         glUniform1i(_uniforms.uTexture, 0);
         glEnable(GL_BLEND);

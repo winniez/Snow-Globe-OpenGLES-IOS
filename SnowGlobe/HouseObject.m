@@ -15,7 +15,7 @@
 #include "Shader.fsh"
 @implementation HouseObject
 
--(id) loadObject
+-(id) loadObject : (float) stoptime DeltaSnow :(float)dY
 {
     // Initialize Class Objects
     self.shaderProcessor = [[ShaderProcessor alloc] init];
@@ -38,7 +38,8 @@
     
     _scale = 1.0f;
     _coord = GLKVector3Make(0.0f, 0.0f, 0.0f);
-    
+    _stoptime = stoptime;
+    _deltaY = dY;
     // Create the GLSL program
     _program = [self.shaderProcessor BuildProgram:ShaderV with:ShaderF];
     glUseProgram(_program);
@@ -57,19 +58,25 @@
     _uniforms.uSpecular = glGetUniformLocation(_program, "uSpecular");
     _uniforms.uExponent = glGetUniformLocation(_program, "uExponent");
     _uniforms.uTexture = glGetUniformLocation(_program, "uTexture");
+    _uniforms.uTime = glGetUniformLocation(_program, "uTime");
+    _uniforms.uStopTime = glGetUniformLocation(_program, "uStopTime");
+    _uniforms.uMode = glGetUniformLocation(_program, "uMode");
+    _uniforms.uDeltaY = glGetUniformLocation(_program, "uDeltaY");
     glUseProgram(0);
-    /*
-    NSLog(@"num of vertices %d",  (int)(sizeof(ManorOBJVerts)/sizeof(float)/3));
-    NSLog(@"num of normals %d",  (int)(sizeof(ManorOBJNormals)/sizeof(float)/3));
-    NSLog(@"num of tex coords %d",  (int)(sizeof(ManorOBJTexCoords)/sizeof(float)/2));
-    */
+    
     return self;
 }
 
 
 - (void) displayWith : (GLKMatrix4) projectionMatrix
-            MVMatrix :(GLKMatrix4) modelViewMatrix
-             NMatrix :(GLKMatrix3) normalMatrix
+            MVMatrix : (GLKMatrix4) modelViewMatrix
+             NMatrix : (GLKMatrix3) normalMatrix
+              Ambient: (GLKVector3) ambient
+             Diffuse : (GLKVector3) diffuse
+             Specular: (GLKVector3) specular
+               EyeDir: (GLKVector3) eyedir
+            Exponent : (float) exponent
+          CurrentTime: (float) time
 {
     // transform
     GLKMatrix4 mvMatrix = GLKMatrix4TranslateWithVector3(modelViewMatrix, _coord);
@@ -78,13 +85,23 @@
     GLKMatrix3 norMatrix = GLKMatrix3Identity;
     bool isInvertible;
     norMatrix = GLKMatrix4GetMatrix3(GLKMatrix4InvertAndTranspose(mvMatrix, &isInvertible));
-
+    
     // render
-                                     
+    
     glUseProgram(_program);
     glUniformMatrix4fv(_uniforms.uProjectionMatrix, 1, 0, projectionMatrix.m);
     glUniformMatrix4fv(_uniforms.uModelViewMatrix, 1, 0, mvMatrix.m);
     glUniformMatrix3fv(_uniforms.uNormalMatrix, 1, 0, norMatrix.m);
+    
+    glUniform3f(_uniforms.uAmbient, ambient.x, ambient.y, ambient.z);
+    glUniform3f(_uniforms.uDiffuse, diffuse.x, diffuse.y, diffuse.z);
+    glUniform3f(_uniforms.uSpecular, specular.x, specular.y, specular.z);
+    glUniform3f(_uniforms.uEyeDir, eyedir.x, eyedir.y, eyedir.z);
+    glUniform1f(_uniforms.uExponent, exponent);
+    
+    glUniform1f(_uniforms.uTime, time);
+    glUniform1f(_uniforms.uStopTime, _stoptime);
+    glUniform1f(_uniforms.uDeltaY, _deltaY);
     
     // Enable Attributes
     glEnableVertexAttribArray(_attributes.aVertex);
@@ -102,18 +119,23 @@
         glTexEnvi(GL_TEXTURE_ENV,GL_TEXTURE_ENV_MODE,GL_BLEND);
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, _textures[i]);
-        
-        glUniform3f(_uniforms.uAmbient, ManorMTLAmbient[i][0], ManorMTLAmbient[i][1], ManorMTLAmbient[i][2]);
-        glUniform3f(_uniforms.uDiffuse, ManorMTLDiffuse[i][0], ManorMTLDiffuse[i][1], ManorMTLDiffuse[i][2]);
-        glUniform3f(_uniforms.uSpecular, ManorMTLSpecular[i][0], ManorMTLSpecular[i][1], ManorMTLSpecular[i][2]);
-        glUniform1f(_uniforms.uExponent, ManorMTLExponent[i]);
         // Attach Texture
         glUniform1i(_uniforms.uTexture, 0);
+        glUniform1f(_uniforms.uMode, 0.0f);
         glEnable(GL_BLEND);
         glBlendFunc(GL_ONE, GL_ZERO);
         // Draw scene by material group
         glDrawArrays(GL_TRIANGLES, ManorMTLFirst[i], ManorMTLCount[i]);
         glDisable(GL_BLEND);
+        
+        // render snow
+        glEnable (GL_BLEND);
+        glUniform1f(_uniforms.uMode, 2.0f);
+        glBlendFunc (GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+        glDepthMask(0);
+        glDrawArrays(GL_TRIANGLES, ManorMTLFirst[i], ManorMTLCount[i]);
+        glDisable(GL_BLEND);
+        glDepthMask(1);
         glDisable(GL_TEXTURE_2D);
     }
     
@@ -135,8 +157,6 @@
     if(texture == nil)
         NSLog(@"Error loading file: %@", [error localizedDescription]);
     _textures[index] = texture.name;
-    //glBindTexture(GL_TEXTURE_2D, texture.name);
-    
 }
 
 - (void) setCoord : (GLKVector3) newcoord

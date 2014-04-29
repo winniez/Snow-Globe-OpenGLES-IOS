@@ -13,11 +13,11 @@
 #include "Shader.vsh"
 #include "Shader.fsh"
 @implementation House4Object
--(id) loadObject
+-(id) loadObject : (float) stoptime
 {
     _scale = 1.0f;
     _coord = GLKVector3Make(0.0f, 0.0f, 0.0f);
-    
+    _stoptime = stoptime;
     // Initialize Class Objects
     self.shaderProcessor = [[ShaderProcessor alloc] init];
     textureFiles = [NSArray arrayWithObjects:@"Bordersmed_house_final1.jpg",
@@ -56,6 +56,10 @@
     _uniforms.uSpecular = glGetUniformLocation(_program, "uSpecular");
     _uniforms.uExponent = glGetUniformLocation(_program, "uExponent");
     _uniforms.uTexture = glGetUniformLocation(_program, "uTexture");
+    _uniforms.uTime = glGetUniformLocation(_program, "uTime");
+    _uniforms.uStopTime = glGetUniformLocation(_program, "uStopTime");
+    _uniforms.uMode = glGetUniformLocation(_program, "uMode");
+    _uniforms.uDeltaY = glGetUniformLocation(_program, "uDeltaY");
     /*
      NSLog(@"num of vertices %d",  (int)(sizeof(med_house_finalOBJVerts)/sizeof(float)/3));
      NSLog(@"num of normals %d",  (int)(sizeof(med_house_finalOBJNormals)/sizeof(float)/3));
@@ -68,10 +72,22 @@
 - (void) displayWith : (GLKMatrix4) projectionMatrix
             MVMatrix :(GLKMatrix4) modelViewMatrix
              NMatrix :(GLKMatrix3) normalMatrix
+              Ambient: (GLKVector3) ambient
+             Diffuse : (GLKVector3) diffuse
+             Specular: (GLKVector3) specular
+               EyeDir: (GLKVector3) eyedir
+            Exponent : (float) exponent
+          CurrentTime: (float) time
 {
     glUniformMatrix4fv(_uniforms.uProjectionMatrix, 1, 0, projectionMatrix.m);
     glUniformMatrix4fv(_uniforms.uModelViewMatrix, 1, 0, modelViewMatrix.m);
     glUniformMatrix3fv(_uniforms.uNormalMatrix, 1, 0, normalMatrix.m);
+    
+    glUniform3f(_uniforms.uAmbient, ambient.x, ambient.y, ambient.z);
+    glUniform3f(_uniforms.uDiffuse, diffuse.x, diffuse.y, diffuse.z);
+    glUniform3f(_uniforms.uSpecular, specular.x, specular.y, specular.z);
+    glUniform3f(_uniforms.uEyeDir, eyedir.x, eyedir.y, eyedir.z);
+    glUniform1f(_uniforms.uExponent, exponent);
     
     // Enable Attributes
     glEnableVertexAttribArray(_attributes.aVertex);
@@ -88,11 +104,12 @@
     {
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, _textures[i]);
-        
+        /*
         glUniform3f(_uniforms.uAmbient, med_house_finalMTLAmbient[i][0], med_house_finalMTLAmbient[i][1], med_house_finalMTLAmbient[i][2]);
         glUniform3f(_uniforms.uDiffuse, med_house_finalMTLDiffuse[i][0], med_house_finalMTLDiffuse[i][1], med_house_finalMTLDiffuse[i][2]);
         glUniform3f(_uniforms.uSpecular, med_house_finalMTLSpecular[i][0], med_house_finalMTLSpecular[i][1], med_house_finalMTLSpecular[i][2]);
         glUniform1f(_uniforms.uExponent, med_house_finalMTLExponent[i]);
+         */
         // Attach Texture
         glUniform1i(_uniforms.uTexture, 0);
         glEnable(GL_BLEND);

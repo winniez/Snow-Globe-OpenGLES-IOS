@@ -9,14 +9,14 @@
 #ifndef SnowGlobe_Utility_h
 #define SnowGlobe_Utility_h
 
-struct AttributeHandles
+typedef struct AttributeHandles
 {
     GLint       aVertex;
     GLint       aNormal;
     GLint       aTexture;
-};
+} AttributeHandles;
 
-struct UniformHandles
+typedef struct UniformHandles
 {
     GLuint      uProjectionMatrix;
     GLuint      uModelViewMatrix;
@@ -26,10 +26,16 @@ struct UniformHandles
     GLint       uDiffuse;
     GLint       uSpecular;
     GLint       uExponent;
+    GLint       uEyeDir;
     
+    GLint       uStopTime;
+    GLint       uTime;
+    
+    GLint       uColor;
     GLint       uTexture;
     GLint       uMode;
-};
+    GLint       uDeltaY;
+} UniformHandles;
 
 typedef struct GlassSphereAttributeHandles
 {
@@ -48,6 +54,7 @@ typedef struct GlassSphereUniformHandles
     GLint       uDiffuse;
     GLint       uSpecular;
     GLint       uExponent;
+    GLint       uEyeDir;
     
     GLint       uTexture;
     GLint       uMode;
@@ -73,12 +80,12 @@ typedef struct ParticleUniformHandles
     GLuint      u_ModelViewMatrix;
     GLint       u_Gravity;
     GLint       u_Time;
-    GLint       u_eRadius;
-    GLint       u_eVelocity;
+    GLint       u_StopTime;
     GLint       u_eDecay;
     GLint       u_eSize;
     GLint       u_eColor;
     GLint       u_Texture;
+    GLint       u_eStopPlaneY;
 } ParticleUniformHandles;
 
 
